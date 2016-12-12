@@ -3,6 +3,7 @@ package com.egencia.webapp.casper.client;
 import com.egencia.auth.AuthorizationPayload;
 import com.egencia.webapp.casper.model.SearchRequest;
 import com.egencia.webapp.casper.model.SearchResponse;
+import com.egencia.webapp.casper.model.trip.TripRequest;
 import com.egencia.webapp.users.common.utils.AuthUtil;
 import com.egencia.webapp.users.common.utils.CommonConfiguration;
 import com.egencia.webapp.users.common.utils.Constants;
@@ -197,11 +198,73 @@ public class FlightsRestClient implements InitializingBean {
                 LOGGER.info("Response received from the user_service");
                 String responseData = responseEntity.getBody();
                 LOGGER.info("Response received from the user_service, total number of records found = " + responseData);
+                return responseData != null ? responseData.substring(1, responseData.length()-1) :  responseData;
+            }
+        } catch (Exception e) {
+            LOGGER.error("Exception occured in calling searchUsersByFilter()" + e.getMessage());
+            throw new Exception(e.getMessage());
+        }
+
+        return null;
+    }
+    
+    
+    /**
+     * Gets the user list. by given filter search criteria.
+     *
+     * @param requestPayLoad the request pay load
+     * @param url            the url
+     * @return the user list
+     * @throws Exception the exception
+     */
+    public Map createDraftTrip(TripRequest tripRequest) throws Exception {
+        // TODO: Check implementation again
+        HttpHeaders headers = addAuthorizationHeader(getAuthToken(), null);
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        String payloadInJson = jacksonObjectMapper.writeValueAsString(tripRequest);
+        LOGGER.info("Request payload : " + payloadInJson);
+        HttpEntity<String> requestEntity = new HttpEntity<String>(payloadInJson, headers);
+
+       
+        try {
+            ResponseEntity<Map> responseEntity = restTemplate.exchange(getFlightsUrl(Constants.FLIGHTS_SEARCH_ID_URL), HttpMethod.POST, requestEntity,
+            		Map.class);
+            if (responseEntity.getStatusCode() == HttpStatus.OK || responseEntity.getStatusCode() == HttpStatus.CREATED) {
+                LOGGER.info("Response received from the user_service");
+                Map responseData = responseEntity.getBody();
+                LOGGER.info("Response received from the user_service, total number of records found = " + responseData);
                 return responseData;
             }
         } catch (Exception e) {
             LOGGER.error("Exception occured in calling searchUsersByFilter()" + e.getMessage());
             throw new Exception(e.getMessage());
+        }
+
+        return null;
+    }
+    
+    
+    public SearchResponse getResultsBySearchId(String searchId) throws Exception {
+
+    	 HttpHeaders requestHeaders = new HttpHeaders();
+    	 requestHeaders.add("Authorization", getAuthToken());
+
+
+
+        HttpEntity<String> requestEntity = new HttpEntity<String>(requestHeaders);
+        try {
+            ResponseEntity<SearchResponse> responseEntity = restTemplate.exchange("https://wwwegenciaeu.int-maui.sb.karmalab.net/flight-service/v1/searches/"+searchId+"/bounds?index=0&sort=duration-asc", HttpMethod.GET, requestEntity,
+            		SearchResponse.class);
+            if (responseEntity.getStatusCode() == HttpStatus.OK || responseEntity.getStatusCode() == HttpStatus.CREATED) {
+                LOGGER.info("Response received from the user_service");
+                SearchResponse responseData = responseEntity.getBody();
+                LOGGER.info("Response received from the user_service, total number of records found = " + responseData);
+                return responseData;
+            }
+        } catch (Exception e) {
+            LOGGER.error("Exception occured in calling searchUsersByFilter()" + e.getMessage());
+
         }
 
         return null;
@@ -223,7 +286,7 @@ public class FlightsRestClient implements InitializingBean {
                 LOGGER.info("Response received from the user_service");
                 Map responseData = responseEntity.getBody();
                 LOGGER.info("Response received from the user_service, total number of records found = " + responseData);
-                return "Bearer XZhsCe-LAsX2cxsYUG0tVRMe1QngXfst.na";
+                return "Bearer "+responseData.get("access_token");
             }
         } catch (Exception e) {
             LOGGER.error("Exception occured in calling searchUsersByFilter()" + e.getMessage());

@@ -1,0 +1,21 @@
+package com.egencia.webapp.casper.calendar;
+
+import org.quartz.*;
+import org.quartz.impl.StdSchedulerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.text.ParseException;
+
+/**
+ * Created by pkapoor on 12/12/16.
+ */
+@Component
+public class CalendarCronTrigger {
+
+    @Autowired
+    public CalendarCronTrigger() {
+       
+    }
+
+}
