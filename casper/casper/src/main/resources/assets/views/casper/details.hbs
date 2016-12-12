@@ -1,0 +1,48 @@
+<!-- casper's "detials" View -->
+{{#partial "content"}}
+    <div class="site-content">
+        <header class="row">
+            <div class="col col-8">
+                <h1>{{casper.name}}</h1>
+                <h3>{{casper.description}}</h3>
+            </div>
+            <div class="col col-4">
+                <p><a href="/casper">Back</a></p>
+                <p><a href="http://www.expedia.co.uk/Las-Vegas-Hotels.d178276.Travel-Guide-Hotels">Visitors' Tips</a></p>
+            </div>
+        </header>
+        <div class="row">
+            <div class="col col-8">
+                {{#include "partials/uitk/tabs" theme="simple" stretch=true}}
+                    {{include "partials/uitk/tab" label="Photos" id="details-a"}}
+                    {{include "partials/uitk/tab" label="Map" id="details-b"}}
+                    {{include "partials/uitk/tab" label="Near by" id="details-c"}}
+                {{/include}}
+                {{#include "partials/uitk/tab-panes"}}
+                    {{#include "partials/uitk/tab-pane" id="details-a"}}
+                        {{#each casper.photos }}
+                            <img src="{{this}}">
+                        {{/each}}
+                    {{/include}}
+                    {{#include "partials/uitk/tab-pane" id="details-b"}}
+                        <p>{{casper.name}}</p>
+                    {{/include}}
+                    {{#include "partials/uitk/tab-pane" id="details-c"}}
+                        <p>A junkyard, bail bonds, and the bus station.</p>
+                    {{/include}}
+                {{/include}}
+            </div>
+            <div class="col col-4">{{i18nCurrency casper.price}}</div>
+        </div>
+    </div>
+{{/partial}}
+
+{{#partial "more-scripts"}}
+    <!--Include this View's Presenter-->
+    <script>EG.casper.Presenters.Details()</script>
+{{/partial}}
+
+{{> layouts/default}}
+
+
+
