@@ -3,7 +3,9 @@ package com.egencia.webapp.casper.client;
 import com.egencia.auth.AuthorizationPayload;
 import com.egencia.webapp.casper.model.SearchRequest;
 import com.egencia.webapp.casper.model.SearchResponse;
+import com.egencia.webapp.casper.model.email.EmailRequest;
 import com.egencia.webapp.casper.model.trip.TripRequest;
+import com.egencia.webapp.users.common.utils.AppContext;
 import com.egencia.webapp.users.common.utils.AuthUtil;
 import com.egencia.webapp.users.common.utils.CommonConfiguration;
 import com.egencia.webapp.users.common.utils.Constants;
@@ -228,7 +230,7 @@ public class FlightsRestClient implements InitializingBean {
 
        
         try {
-            ResponseEntity<Map> responseEntity = restTemplate.exchange(getFlightsUrl(Constants.FLIGHTS_SEARCH_ID_URL), HttpMethod.POST, requestEntity,
+            ResponseEntity<Map> responseEntity = restTemplate.exchange("https://wwwegenciacom.int-maui.sb.karmalab.net/trip-service/v2/trips/", HttpMethod.POST, requestEntity,
             		Map.class);
             if (responseEntity.getStatusCode() == HttpStatus.OK || responseEntity.getStatusCode() == HttpStatus.CREATED) {
                 LOGGER.info("Response received from the user_service");
@@ -270,32 +272,108 @@ public class FlightsRestClient implements InitializingBean {
         return null;
     }
     
+    public SearchResponse getInboundResults(String inboundUrl) throws Exception {
+
+   	 HttpHeaders requestHeaders = new HttpHeaders();
+   	 requestHeaders.add("Authorization", getAuthToken());
+
+
+
+       HttpEntity<String> requestEntity = new HttpEntity<String>(requestHeaders);
+       try {
+           ResponseEntity<SearchResponse> responseEntity = restTemplate.exchange("https://wwwegenciaeu.int-maui.sb.karmalab.net/flight-service/"+inboundUrl, HttpMethod.GET, requestEntity,
+           		SearchResponse.class);
+           if (responseEntity.getStatusCode() == HttpStatus.OK || responseEntity.getStatusCode() == HttpStatus.CREATED) {
+               LOGGER.info("Response received from the user_service");
+               SearchResponse responseData = responseEntity.getBody();
+               LOGGER.info("Response received from the user_service, total number of records found = " + responseData);
+               return responseData;
+           }
+       } catch (Exception e) {
+           LOGGER.error("Exception occured in calling searchUsersByFilter()" + e.getMessage());
+
+       }
+
+       return null;
+   }
+    
     public String getAuthToken() 	{
     	
-    	 HttpHeaders requestHeaders = new HttpHeaders();
-    	 requestHeaders.add("Authorization", "Basic YTRmN2U4OTMtYjk3My00NDg2LTgzY2EtY2M5Nzg0YjZiZWU2OmF5bTA3Z1FFc0duMlJVYmxYY2RNWlpmcUZuRzVhZkVP");
-    //	HttpHeaders headers = addAuthorizationHeader("Basic YTRmN2U4OTMtYjk3My00NDg2LTgzY2EtY2M5Nzg0YjZiZWU2OmF5bTA3Z1FFc0duMlJVYmxYY2RNWlpmcUZuRzVhZkVP", null);
-    	 requestHeaders.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-        HttpEntity<String> requestEntity = new HttpEntity<String>(null, requestHeaders);
+    	Map userData = getUserData();
+    	if(userData != null)	{
+    		return "Bearer "+userData.get("access_token");
+    	}
+    	return null;
+    	
+    }
+    
+    public Map getUserData()	{
+    	if(AppContext.get("userData") != null)	{
+    		return (Map) AppContext.get("userData");
+    	} else	{
+    		 HttpHeaders requestHeaders = new HttpHeaders();
+        	 requestHeaders.add("Authorization", "Basic YTRmN2U4OTMtYjk3My00NDg2LTgzY2EtY2M5Nzg0YjZiZWU2OmF5bTA3Z1FFc0duMlJVYmxYY2RNWlpmcUZuRzVhZkVP");
+        //	HttpHeaders headers = addAuthorizationHeader("Basic YTRmN2U4OTMtYjk3My00NDg2LTgzY2EtY2M5Nzg0YjZiZWU2OmF5bTA3Z1FFc0duMlJVYmxYY2RNWlpmcUZuRzVhZkVP", null);
+        	 requestHeaders.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+            HttpEntity<String> requestEntity = new HttpEntity<String>(null, requestHeaders);
+
+           
+            try {
+                ResponseEntity<Map> responseEntity = restTemplate.exchange("http://wwwegenciacom.int-maui.sb.karmalab.net/auth-service/v1/tokens?grant_type=password&username=vatiwari&password=Egencia@1", HttpMethod.POST, requestEntity,
+                		Map.class);
+                if (responseEntity.getStatusCode() == HttpStatus.OK || responseEntity.getStatusCode() == HttpStatus.CREATED) {
+                    LOGGER.info("Response received from the user_service");
+                    Map responseData = responseEntity.getBody();
+                    LOGGER.info("Response received from the user_service, total number of records found = " + responseData);
+                    AppContext.put("userData", responseData);
+                    return responseData;
+                }
+            } catch (Exception e) {
+                LOGGER.error("Exception occured in calling searchUsersByFilter()" + e.getMessage());
+
+            }
+
+            return null;
+    	}
+    	
+    }
+    
+    /**
+     * Gets the user list. by given filter search criteria.
+     *
+     * @param requestPayLoad the request pay load
+     * @param url            the url
+     * @return the user list
+     * @throws JsonProcessingException 
+     * @throws Exception the exception
+     */
+    public void sendEmail(EmailRequest emailRequest) throws JsonProcessingException	{
+        // TODO: Check implementation again
+        HttpHeaders headers = addAuthorizationHeader(getAuthToken(), null);
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        String payloadInJson = jacksonObjectMapper.writeValueAsString(emailRequest);
+        LOGGER.info("Request payload : " + payloadInJson);
+        HttpEntity<String> requestEntity = new HttpEntity<String>(payloadInJson, headers);
 
        
         try {
-            ResponseEntity<Map> responseEntity = restTemplate.exchange("http://wwwegenciacom.int-maui.sb.karmalab.net/auth-service/v1/tokens?grant_type=password&username=vatiwari&password=Egencia@1", HttpMethod.POST, requestEntity,
+            ResponseEntity<Map> responseEntity = restTemplate.exchange("https://wwwegenciacom.int-maui.sb.karmalab.net/trip-service/v2/send-trip-notification", HttpMethod.POST, requestEntity,
             		Map.class);
             if (responseEntity.getStatusCode() == HttpStatus.OK || responseEntity.getStatusCode() == HttpStatus.CREATED) {
                 LOGGER.info("Response received from the user_service");
-                Map responseData = responseEntity.getBody();
-                LOGGER.info("Response received from the user_service, total number of records found = " + responseData);
-                return "Bearer "+responseData.get("access_token");
+                responseEntity.getBody();
+
             }
         } catch (Exception e) {
             LOGGER.error("Exception occured in calling searchUsersByFilter()" + e.getMessage());
-
         }
 
-        return null;
-    	
+
     }
+    
+
+
     
 
 }

@@ -15,28 +15,7 @@ public class CalendarCronTrigger {
 
     @Autowired
     public CalendarCronTrigger(CalendarAuth calendarAuth) {
-        JobDetail job = new JobDetail();
-        job.setName("casperPoll");
-        job.setJobClass(CalendarJob.class);
-
-        CronTrigger trigger = new CronTrigger();
-        trigger.setName("casperPollTrigger");
-        try {
-            trigger.setCronExpression("0/30 * * * * ?");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        //schedule it
-        Scheduler scheduler = null;
-        try {
-            scheduler = new StdSchedulerFactory().getScheduler();
-            scheduler.start();
-            scheduler.getContext().put("calendarAuth", calendarAuth);
-            scheduler.scheduleJob(job, trigger);
-        } catch (SchedulerException e) {
-            e.printStackTrace();
-        }
+       
     }
 
 }

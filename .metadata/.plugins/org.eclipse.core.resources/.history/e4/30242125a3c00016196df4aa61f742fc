@@ -1,0 +1,1664 @@
+{
+
+  "name": "Seattle, WA",
+  "type": "TRIP",
+
+  "items": [
+    {
+      "item_type": "FLIGHT",
+      
+      "external_item": {
+        "external_system": "NA",
+        "line_id": "26"
+      },
+      "locale": "en-US",
+      "approval_setting": "",
+      "pricing": {
+        "amount": "1360.95",
+        "currency": "USD",
+        "breakdown": [
+          {
+            "type": "Base",
+            "amount": 729
+          },
+          {
+            "type": "Taxes and Airline fees",
+            "amount": 631.95
+          }
+        ]
+      },
+      "currency_exchange": {},
+      "reservations": [
+        {
+          "booking": {
+            "type": "ONLINE",
+            "booked_by": {},
+            "provider": "SABRE",
+            "main_contact": {
+              "name": "Emergency Contacts",
+              "email": "vatiwarv@egencia.com"
+            }
+          },
+          "pricing": {
+            "traveler_prices": [
+              {
+                "user_id": 5144210,
+                "amount": 1360.95,
+                "currency": "USD",
+                "breakdown": [
+                  {
+                    "type": "Base",
+                    "amount": 729
+                  },
+                  {
+                    "type": "Taxes and Airline fees",
+                    "amount": 631.95
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "travelers": [
+        {
+          "user_id": 5144210,
+          "company_id": 33041,
+          "product_id": 60000,
+          "first_name": "Emergency",
+          "last_name": "Contacts",
+          "romanized_first_name": "Emergency",
+          "romanized_last_name": "Contacts",
+          "email": "vatiwarv@egencia.com",
+          "occasional_traveler": false,
+          "main_traveler": true,
+          "customer_care": {
+            "email": "corptravel@customercare.egencia.com",
+            "phone": "+1 (866) 397-2677 or +1 (702) 939-2530"
+          },
+          "show_ticket": true,
+          "show_not_booked": true,
+          "show_ticket_type": true,
+          "booking_reference": "21787398077",
+          "show_ticket_date": false,
+          "status": {
+            "code": "DRAFT",
+            "name": "Not Booked",
+            "booking_state": "DRAFT"
+          },
+          "isDraft": true
+        }
+      ],
+      "links": {
+        "cancel": "qscr=tpac&itid=17873980&itdx=26&actn=cancel",
+        "exchangev1": "qscr=cexf&itid=17873980&itdx=26&acmd=aflt&vwtp=2&usel=2&rfrr=-51444",
+        "exchange": "qscr=tpac&itid=17873980&itdx=26&actn=exchange",
+        "cancelv1": "qscr=cexf&itid=17873980&itdx=26&acmd=aflt&vwtp=2&usel=1&rfrr=-51444"
+      },
+      "company": {
+        "name": "Test US Rail",
+        "company_id": 33041
+      },
+      "messages": [
+        {
+          "importance": "HIGH",
+          "issuer": "Egencia",
+          "message": "<a href=\"http://www.cbp.gov/esta\"><b>ESTA authorization required</b></a> - All passengers traveling to or transferring through the United States under the Visa Waiver Program are required to obtain an electronic travel authorization prior to travel. You must request this authorization at least 72 hours prior to travel.\tTo apply, go to <a href=\"https://esta.cbp.dhs.gov\" target=\"_blank\">https://esta.cbp.dhs.gov</a>."
+        },
+        {
+          "importance": "HIGH",
+          "issuer": "Egencia",
+          "message": "Proof of citizenship is required for international travel - Be sure to bring all necessary documentation (passport, visa, etc.). To learn more, visit the <a href=\"/pub/agent.dll?qscr=cibt\"><b>CIBT VISA Service Website</b></a>."
+        }
+      ],
+      "last_updated_at": {
+        "offset": 0,
+        "datetime": "2016-12-12T17:22:04.484Z"
+      },
+      "origin_destinations": [
+        {
+          "segments": [
+            {
+              "booking_code": "K",
+              "departure_location": {
+                "code": "DEL",
+                "type": "AIRPORT",
+                "terminal": "3",
+                "gate": "",
+                "geo_coordinates": [
+                  28.55574,
+                  77.08614
+                ],
+                "name": "Delhi, India (DEL-Indira Gandhi Intl.)",
+                "city": "Delhi",
+                "romanized_city": "Delhi",
+                "metro": "Delhi, India (DEL-Indira Gandhi Intl.)",
+                "full_address": "Delhi, India (DEL-Indira Gandhi Intl.), DEL, Delhi",
+                "port_name_differs": true
+              },
+              "arrival_location": {
+                "code": "FRA",
+                "type": "AIRPORT",
+                "terminal": "1",
+                "gate": "",
+                "geo_coordinates": [
+                  50.05098,
+                  8.571705
+                ],
+                "name": "Frankfurt, Germany (FRA-Frankfurt Intl.)",
+                "city": "Frankfurt ",
+                "romanized_city": "Frankfurt ",
+                "metro": "Frankfurt, Germany (FRA-All Airports)",
+                "full_address": "Frankfurt, Germany (FRA-Frankfurt Intl.), FRA, Frankfurt, Frankfurt, Germany (FRA-All Airports)",
+                "port_name_differs": true
+              },
+              "equipment_type": {
+                "code": "388",
+                "description": "Airbus Industrie A380-800 Passenger"
+              },
+              "traveler_info": [
+                {
+                  "user_id": 5144210,
+                  "status": {
+                    "code": "DRAFT",
+                    "name": "Not Booked",
+                    "booking_state": "DRAFT"
+                  },
+                  "booking_reference": "21787398077",
+                  "fare_basis": "KRCZAAW",
+                  "rules_and_regulations": {
+                    "full_disclosure": [
+                      "<ul><LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI><LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI><B>Airline rules & regulations</B><LI>Tickets are refundable.</LI><LI>Ticket must be purchased by 15-Dec-16.</LI><LI>Ticket changes may incur penalties and/or increased fares.</LI><LI>Tickets are nontransferable and name changes are not allowed.</LI><LI>Ticket prices include a nonrefundable booking fee.</LI><LI>Other penalties may apply.</LI></ul>"
+                    ],
+                    "rules": [
+                      {
+                        "message": "<LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI>"
+                      },
+                      {
+                        "message": "<LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI>"
+                      },
+                      {
+                        "message": "<B>Airline rules & regulations</B>"
+                      },
+                      {
+                        "message": "<LI>Tickets are refundable.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket must be purchased by 15-Dec-16.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket changes may incur penalties and/or increased fares.</LI>"
+                      },
+                      {
+                        "message": "<LI>Tickets are nontransferable and name changes are not allowed.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket prices include a nonrefundable booking fee.</LI>"
+                      },
+                      {
+                        "message": "<LI>Other penalties may apply.</LI>"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "distance": 6133,
+              "marketing_designation": {
+                "carrier_code": "LH",
+                "number": "761",
+                "carrier_name": "Lufthansa",
+                "low_cost_carrier": false,
+                "seat_selection": true,
+                "icon_path": "/pubspec/images/airlines/LH.gif"
+              },
+              "baggage_allowance": {
+                "overall_restrictions": "Baggage fee information is provided for your convenience, and shows the generally applicable fees for baggage collected by the airline. Discounts may apply based on when payment is made (online vs. at the airport), frequent flier status, military status, or other factors. Additional fees for overweight/oversize bags may apply. In multiple-carrier itineraries, the applicable fees and baggage policies for the entire trip are determined by the first carrier on the ticket. In limited cases, exceptions to this rule may apply.  In the case of codeshare flights, the carrier in whose name the travel was sold will determine the baggage fees and policies.",
+                "ancillaries": [
+                  {
+                    "name": "Bag 1",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Bag 2",
+                    "amount": 200,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Carry-on",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  }
+                ]
+              },
+              "layover": 180,
+              "duration": 510,
+              "class": {
+                "code": "ECONOMY/COACH CLASS(K)",
+                "name": "ECONOMY/COACH CLASS(K)"
+              },
+              "scheduled_departure_datetime": "2016-12-16T03:30:00+0530",
+              "scheduled_arrival_datetime": "2016-12-16T07:30:00+0100",
+              "port_change": false,
+              "duration_hours": 8,
+              "duration_mins": 30,
+              "layover_hours": 3,
+              "layover_mins": 0,
+              "multi_stop": false
+            },
+            {
+              "booking_code": "K",
+              "departure_location": {
+                "code": "FRA",
+                "type": "AIRPORT",
+                "terminal": "1",
+                "gate": "",
+                "geo_coordinates": [
+                  50.05098,
+                  8.571705
+                ],
+                "name": "Frankfurt, Germany (FRA-Frankfurt Intl.)",
+                "city": "Frankfurt ",
+                "romanized_city": "Frankfurt ",
+                "metro": "Frankfurt, Germany (FRA-All Airports)",
+                "full_address": "Frankfurt, Germany (FRA-Frankfurt Intl.), FRA, Frankfurt, Frankfurt, Germany (FRA-All Airports)",
+                "port_name_differs": true
+              },
+              "arrival_location": {
+                "code": "SEA",
+                "type": "AIRPORT",
+                "terminal": "",
+                "gate": "",
+                "geo_coordinates": [
+                  47.44363,
+                  -122.30175
+                ],
+                "name": "Seattle, WA (SEA-Seattle - Tacoma Intl.)",
+                "city": "Seattle",
+                "romanized_city": "Seattle",
+                "metro": "Seattle, WA (SEA-Seattle - Tacoma Intl.)",
+                "full_address": "Seattle, WA (SEA-Seattle - Tacoma Intl.), SEA, Seattle",
+                "port_name_differs": true
+              },
+              "equipment_type": {
+                "code": "744",
+                "description": "Boeing 747-400"
+              },
+              "traveler_info": [
+                {
+                  "user_id": 5144210,
+                  "status": {
+                    "code": "DRAFT",
+                    "name": "Not Booked",
+                    "booking_state": "DRAFT"
+                  },
+                  "booking_reference": "21787398077",
+                  "fare_basis": "KRCZAAW",
+                  "rules_and_regulations": {
+                    "full_disclosure": [
+                      "<ul><LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI><LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI><B>Airline rules & regulations</B><LI>Tickets are refundable.</LI><LI>Ticket must be purchased by 15-Dec-16.</LI><LI>Ticket changes may incur penalties and/or increased fares.</LI><LI>Tickets are nontransferable and name changes are not allowed.</LI><LI>Ticket prices include a nonrefundable booking fee.</LI><LI>Other penalties may apply.</LI></ul>"
+                    ],
+                    "rules": [
+                      {
+                        "message": "<LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI>"
+                      },
+                      {
+                        "message": "<LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI>"
+                      },
+                      {
+                        "message": "<B>Airline rules & regulations</B>"
+                      },
+                      {
+                        "message": "<LI>Tickets are refundable.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket must be purchased by 15-Dec-16.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket changes may incur penalties and/or increased fares.</LI>"
+                      },
+                      {
+                        "message": "<LI>Tickets are nontransferable and name changes are not allowed.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket prices include a nonrefundable booking fee.</LI>"
+                      },
+                      {
+                        "message": "<LI>Other penalties may apply.</LI>"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "distance": 8222,
+              "marketing_designation": {
+                "carrier_code": "LH",
+                "number": "490",
+                "carrier_name": "Lufthansa",
+                "low_cost_carrier": false,
+                "seat_selection": true,
+                "icon_path": "/pubspec/images/airlines/LH.gif"
+              },
+              "baggage_allowance": {
+                "overall_restrictions": "Baggage fee information is provided for your convenience, and shows the generally applicable fees for baggage collected by the airline. Discounts may apply based on when payment is made (online vs. at the airport), frequent flier status, military status, or other factors. Additional fees for overweight/oversize bags may apply. In multiple-carrier itineraries, the applicable fees and baggage policies for the entire trip are determined by the first carrier on the ticket. In limited cases, exceptions to this rule may apply.  In the case of codeshare flights, the carrier in whose name the travel was sold will determine the baggage fees and policies.",
+                "ancillaries": [
+                  {
+                    "name": "Bag 1",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Bag 2",
+                    "amount": 100,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Carry-on",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  }
+                ]
+              },
+              "duration": 620,
+              "class": {
+                "code": "ECONOMY/COACH CLASS(K)",
+                "name": "ECONOMY/COACH CLASS(K)"
+              },
+              "scheduled_departure_datetime": "2016-12-16T10:30:00+0100",
+              "scheduled_arrival_datetime": "2016-12-16T11:50:00-0800",
+              "duration_hours": 10,
+              "duration_mins": 20,
+              "multi_stop": false
+            }
+          ],
+          "departure_location": {
+            "code": "DEL",
+            "type": "AIRPORT",
+            "terminal": "3",
+            "gate": "",
+            "geo_coordinates": [
+              28.55574,
+              77.08614
+            ],
+            "name": "Delhi, India (DEL-Indira Gandhi Intl.)",
+            "city": "Delhi",
+            "romanized_city": "Delhi",
+            "metro": "Delhi, India (DEL-Indira Gandhi Intl.)",
+            "full_address": "Delhi, India (DEL-Indira Gandhi Intl.), DEL, Delhi",
+            "port_name_differs": true
+          },
+          "arrival_location": {
+            "code": "SEA",
+            "type": "AIRPORT",
+            "terminal": "",
+            "gate": "",
+            "geo_coordinates": [
+              47.44363,
+              -122.30175
+            ],
+            "name": "Seattle, WA (SEA-Seattle - Tacoma Intl.)",
+            "city": "Seattle",
+            "romanized_city": "Seattle",
+            "metro": "Seattle, WA (SEA-Seattle - Tacoma Intl.)",
+            "full_address": "Seattle, WA (SEA-Seattle - Tacoma Intl.), SEA, Seattle",
+            "port_name_differs": true
+          },
+          "start_datetime": "2016-12-16T03:30:00+0530",
+          "end_datetime": "2016-12-16T11:50:00-0800",
+          "scheduled_departure_datetime": "2016-12-16T03:30:00+0530",
+          "scheduled_arrival_datetime": "2016-12-16T11:50:00-0800",
+          "total_duration": {
+            "hours": 21,
+            "minutes": 50
+          },
+          "duration": {
+            "hours": 21,
+            "minutes": 50
+          },
+          "duration_hours": 21,
+          "duration_mins": 50,
+          "multi_destination": false,
+          "stops": 0,
+          "layovers": 1,
+          "stop_locations": [
+            {
+              "code": "FRA",
+              "type": "AIRPORT",
+              "terminal": "1",
+              "gate": "",
+              "geo_coordinates": [
+                50.05098,
+                8.571705
+              ],
+              "name": "Frankfurt, Germany (FRA-Frankfurt Intl.)",
+              "city": "Frankfurt ",
+              "romanized_city": "Frankfurt ",
+              "metro": "Frankfurt, Germany (FRA-All Airports)",
+              "full_address": "Frankfurt, Germany (FRA-Frankfurt Intl.), FRA, Frankfurt, Frankfurt, Germany (FRA-All Airports)",
+              "port_name_differs": true
+            }
+          ],
+          "total_stops": 0,
+          "date_change": 0,
+          "display_segments": [
+            {
+              "booking_code": "K",
+              "departure_location": {
+                "code": "DEL",
+                "type": "AIRPORT",
+                "terminal": "3",
+                "gate": "",
+                "geo_coordinates": [
+                  28.55574,
+                  77.08614
+                ],
+                "name": "Delhi, India (DEL-Indira Gandhi Intl.)",
+                "city": "Delhi",
+                "romanized_city": "Delhi",
+                "metro": "Delhi, India (DEL-Indira Gandhi Intl.)",
+                "full_address": "Delhi, India (DEL-Indira Gandhi Intl.), DEL, Delhi",
+                "port_name_differs": true
+              },
+              "arrival_location": {
+                "code": "FRA",
+                "type": "AIRPORT",
+                "terminal": "1",
+                "gate": "",
+                "geo_coordinates": [
+                  50.05098,
+                  8.571705
+                ],
+                "name": "Frankfurt, Germany (FRA-Frankfurt Intl.)",
+                "city": "Frankfurt ",
+                "romanized_city": "Frankfurt ",
+                "metro": "Frankfurt, Germany (FRA-All Airports)",
+                "full_address": "Frankfurt, Germany (FRA-Frankfurt Intl.), FRA, Frankfurt, Frankfurt, Germany (FRA-All Airports)",
+                "port_name_differs": true
+              },
+              "equipment_type": {
+                "code": "388",
+                "description": "Airbus Industrie A380-800 Passenger"
+              },
+              "traveler_info": [
+                {
+                  "user_id": 5144210,
+                  "status": {
+                    "code": "DRAFT",
+                    "name": "Not Booked",
+                    "booking_state": "DRAFT"
+                  },
+                  "booking_reference": "21787398077",
+                  "fare_basis": "KRCZAAW",
+                  "rules_and_regulations": {
+                    "full_disclosure": [
+                      "<ul><LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI><LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI><B>Airline rules & regulations</B><LI>Tickets are refundable.</LI><LI>Ticket must be purchased by 15-Dec-16.</LI><LI>Ticket changes may incur penalties and/or increased fares.</LI><LI>Tickets are nontransferable and name changes are not allowed.</LI><LI>Ticket prices include a nonrefundable booking fee.</LI><LI>Other penalties may apply.</LI></ul>"
+                    ],
+                    "rules": [
+                      {
+                        "message": "<LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI>"
+                      },
+                      {
+                        "message": "<LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI>"
+                      },
+                      {
+                        "message": "<B>Airline rules & regulations</B>"
+                      },
+                      {
+                        "message": "<LI>Tickets are refundable.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket must be purchased by 15-Dec-16.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket changes may incur penalties and/or increased fares.</LI>"
+                      },
+                      {
+                        "message": "<LI>Tickets are nontransferable and name changes are not allowed.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket prices include a nonrefundable booking fee.</LI>"
+                      },
+                      {
+                        "message": "<LI>Other penalties may apply.</LI>"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "distance": 6133,
+              "marketing_designation": {
+                "carrier_code": "LH",
+                "number": "761",
+                "carrier_name": "Lufthansa",
+                "low_cost_carrier": false,
+                "seat_selection": true,
+                "icon_path": "/pubspec/images/airlines/LH.gif"
+              },
+              "baggage_allowance": {
+                "overall_restrictions": "Baggage fee information is provided for your convenience, and shows the generally applicable fees for baggage collected by the airline. Discounts may apply based on when payment is made (online vs. at the airport), frequent flier status, military status, or other factors. Additional fees for overweight/oversize bags may apply. In multiple-carrier itineraries, the applicable fees and baggage policies for the entire trip are determined by the first carrier on the ticket. In limited cases, exceptions to this rule may apply.  In the case of codeshare flights, the carrier in whose name the travel was sold will determine the baggage fees and policies.",
+                "ancillaries": [
+                  {
+                    "name": "Bag 1",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Bag 2",
+                    "amount": 200,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Carry-on",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  }
+                ]
+              },
+              "layover": 180,
+              "duration": 510,
+              "class": {
+                "code": "ECONOMY/COACH CLASS(K)",
+                "name": "ECONOMY/COACH CLASS(K)"
+              },
+              "scheduled_departure_datetime": "2016-12-16T03:30:00+0530",
+              "scheduled_arrival_datetime": "2016-12-16T07:30:00+0100",
+              "port_change": false,
+              "duration_hours": 8,
+              "duration_mins": 30,
+              "layover_hours": 3,
+              "layover_mins": 0,
+              "multi_stop": false
+            },
+            {
+              "booking_code": "K",
+              "departure_location": {
+                "code": "FRA",
+                "type": "AIRPORT",
+                "terminal": "1",
+                "gate": "",
+                "geo_coordinates": [
+                  50.05098,
+                  8.571705
+                ],
+                "name": "Frankfurt, Germany (FRA-Frankfurt Intl.)",
+                "city": "Frankfurt ",
+                "romanized_city": "Frankfurt ",
+                "metro": "Frankfurt, Germany (FRA-All Airports)",
+                "full_address": "Frankfurt, Germany (FRA-Frankfurt Intl.), FRA, Frankfurt, Frankfurt, Germany (FRA-All Airports)",
+                "port_name_differs": true
+              },
+              "arrival_location": {
+                "code": "SEA",
+                "type": "AIRPORT",
+                "terminal": "",
+                "gate": "",
+                "geo_coordinates": [
+                  47.44363,
+                  -122.30175
+                ],
+                "name": "Seattle, WA (SEA-Seattle - Tacoma Intl.)",
+                "city": "Seattle",
+                "romanized_city": "Seattle",
+                "metro": "Seattle, WA (SEA-Seattle - Tacoma Intl.)",
+                "full_address": "Seattle, WA (SEA-Seattle - Tacoma Intl.), SEA, Seattle",
+                "port_name_differs": true
+              },
+              "equipment_type": {
+                "code": "744",
+                "description": "Boeing 747-400"
+              },
+              "traveler_info": [
+                {
+                  "user_id": 5144210,
+                  "status": {
+                    "code": "DRAFT",
+                    "name": "Not Booked",
+                    "booking_state": "DRAFT"
+                  },
+                  "booking_reference": "21787398077",
+                  "fare_basis": "KRCZAAW",
+                  "rules_and_regulations": {
+                    "full_disclosure": [
+                      "<ul><LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI><LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI><B>Airline rules & regulations</B><LI>Tickets are refundable.</LI><LI>Ticket must be purchased by 15-Dec-16.</LI><LI>Ticket changes may incur penalties and/or increased fares.</LI><LI>Tickets are nontransferable and name changes are not allowed.</LI><LI>Ticket prices include a nonrefundable booking fee.</LI><LI>Other penalties may apply.</LI></ul>"
+                    ],
+                    "rules": [
+                      {
+                        "message": "<LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI>"
+                      },
+                      {
+                        "message": "<LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI>"
+                      },
+                      {
+                        "message": "<B>Airline rules & regulations</B>"
+                      },
+                      {
+                        "message": "<LI>Tickets are refundable.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket must be purchased by 15-Dec-16.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket changes may incur penalties and/or increased fares.</LI>"
+                      },
+                      {
+                        "message": "<LI>Tickets are nontransferable and name changes are not allowed.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket prices include a nonrefundable booking fee.</LI>"
+                      },
+                      {
+                        "message": "<LI>Other penalties may apply.</LI>"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "distance": 8222,
+              "marketing_designation": {
+                "carrier_code": "LH",
+                "number": "490",
+                "carrier_name": "Lufthansa",
+                "low_cost_carrier": false,
+                "seat_selection": true,
+                "icon_path": "/pubspec/images/airlines/LH.gif"
+              },
+              "baggage_allowance": {
+                "overall_restrictions": "Baggage fee information is provided for your convenience, and shows the generally applicable fees for baggage collected by the airline. Discounts may apply based on when payment is made (online vs. at the airport), frequent flier status, military status, or other factors. Additional fees for overweight/oversize bags may apply. In multiple-carrier itineraries, the applicable fees and baggage policies for the entire trip are determined by the first carrier on the ticket. In limited cases, exceptions to this rule may apply.  In the case of codeshare flights, the carrier in whose name the travel was sold will determine the baggage fees and policies.",
+                "ancillaries": [
+                  {
+                    "name": "Bag 1",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Bag 2",
+                    "amount": 100,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Carry-on",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  }
+                ]
+              },
+              "duration": 620,
+              "class": {
+                "code": "ECONOMY/COACH CLASS(K)",
+                "name": "ECONOMY/COACH CLASS(K)"
+              },
+              "scheduled_departure_datetime": "2016-12-16T10:30:00+0100",
+              "scheduled_arrival_datetime": "2016-12-16T11:50:00-0800",
+              "duration_hours": 10,
+              "duration_mins": 20,
+              "multi_stop": false
+            }
+          ],
+          "extra_segments": [],
+          "show_location_code": true,
+          "stops_layovers": 1,
+          "multi_layover": false,
+          "multi_stop": false,
+          "multi_stop_layover": false,
+          "too_many_stops": false,
+          "parsed": true
+        },
+        {
+          "segments": [
+            {
+              "booking_code": "Q",
+              "departure_location": {
+                "code": "SEA",
+                "type": "AIRPORT",
+                "terminal": "",
+                "gate": "",
+                "geo_coordinates": [
+                  47.44363,
+                  -122.30175
+                ],
+                "name": "Seattle, WA (SEA-Seattle - Tacoma Intl.)",
+                "city": "Seattle",
+                "romanized_city": "Seattle",
+                "metro": "Seattle, WA (SEA-Seattle - Tacoma Intl.)",
+                "full_address": "Seattle, WA (SEA-Seattle - Tacoma Intl.), SEA, Seattle",
+                "port_name_differs": true
+              },
+              "arrival_location": {
+                "code": "YVR",
+                "type": "AIRPORT",
+                "terminal": "MAIN TERMINAL",
+                "gate": "",
+                "geo_coordinates": [
+                  49.19481,
+                  -123.17781
+                ],
+                "name": "Vancouver, BC, Canada (YVR-Vancouver Intl.)",
+                "city": "Vancouver",
+                "romanized_city": "Vancouver",
+                "metro": "Vancouver, BC, Canada (YVR-All Airports)",
+                "full_address": "Vancouver, BC, Canada (YVR-Vancouver Intl.), YVR, Vancouver, Vancouver, BC, Canada (YVR-All Airports)",
+                "port_name_differs": true
+              },
+              "operating_designation": {
+                "carrier_name": "AIR CANADA EXPRESS - JAZZ"
+              },
+              "equipment_type": {
+                "code": "DH4",
+                "description": "DE HAVILLAND DHC-8 DASH 8-400 DASH 8Q"
+              },
+              "traveler_info": [
+                {
+                  "user_id": 5144210,
+                  "status": {
+                    "code": "DRAFT",
+                    "name": "Not Booked",
+                    "booking_state": "DRAFT"
+                  },
+                  "booking_reference": "21787398077",
+                  "fare_basis": "KRCZAAW",
+                  "rules_and_regulations": {
+                    "full_disclosure": [
+                      "<ul><LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI><LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI><B>Airline rules & regulations</B><LI>Tickets are refundable.</LI><LI>Ticket must be purchased by 15-Dec-16.</LI><LI>Ticket changes may incur penalties and/or increased fares.</LI><LI>Tickets are nontransferable and name changes are not allowed.</LI><LI>Ticket prices include a nonrefundable booking fee.</LI><LI>Other penalties may apply.</LI></ul>"
+                    ],
+                    "rules": [
+                      {
+                        "message": "<LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI>"
+                      },
+                      {
+                        "message": "<LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI>"
+                      },
+                      {
+                        "message": "<B>Airline rules & regulations</B>"
+                      },
+                      {
+                        "message": "<LI>Tickets are refundable.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket must be purchased by 15-Dec-16.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket changes may incur penalties and/or increased fares.</LI>"
+                      },
+                      {
+                        "message": "<LI>Tickets are nontransferable and name changes are not allowed.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket prices include a nonrefundable booking fee.</LI>"
+                      },
+                      {
+                        "message": "<LI>Other penalties may apply.</LI>"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "distance": 206,
+              "marketing_designation": {
+                "carrier_code": "AC",
+                "number": "8122",
+                "carrier_name": "Air Canada",
+                "low_cost_carrier": false,
+                "seat_selection": true,
+                "icon_path": "/pubspec/images/airlines/AC.gif"
+              },
+              "baggage_allowance": {
+                "overall_restrictions": "Baggage fee information is provided for your convenience, and shows the generally applicable fees for baggage collected by the airline. Discounts may apply based on when payment is made (online vs. at the airport), frequent flier status, military status, or other factors. Additional fees for overweight/oversize bags may apply. In multiple-carrier itineraries, the applicable fees and baggage policies for the entire trip are determined by the first carrier on the ticket. In limited cases, exceptions to this rule may apply.  In the case of codeshare flights, the carrier in whose name the travel was sold will determine the baggage fees and policies.",
+                "ancillaries": [
+                  {
+                    "name": "Bag 1",
+                    "amount": 25,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Bag 2",
+                    "amount": 35,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Carry-on",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  }
+                ]
+              },
+              "layover": 531,
+              "duration": 54,
+              "class": {
+                "code": "ECONOMY/COACH CLASS(Q)",
+                "name": "ECONOMY/COACH CLASS(Q)"
+              },
+              "scheduled_departure_datetime": "2016-12-22T11:55:00-0800",
+              "scheduled_arrival_datetime": "2016-12-22T12:49:00-0800",
+              "port_change": false,
+              "duration_hours": 0,
+              "duration_mins": 54,
+              "layover_hours": 8,
+              "layover_mins": 51,
+              "code_share": true,
+              "multi_stop": false
+            },
+            {
+              "booking_code": "Q",
+              "departure_location": {
+                "code": "YVR",
+                "type": "AIRPORT",
+                "terminal": "MAIN TERMINAL",
+                "gate": "",
+                "geo_coordinates": [
+                  49.19481,
+                  -123.17781
+                ],
+                "name": "Vancouver, BC, Canada (YVR-Vancouver Intl.)",
+                "city": "Vancouver",
+                "romanized_city": "Vancouver",
+                "metro": "Vancouver, BC, Canada (YVR-All Airports)",
+                "full_address": "Vancouver, BC, Canada (YVR-Vancouver Intl.), YVR, Vancouver, Vancouver, BC, Canada (YVR-All Airports)",
+                "port_name_differs": true
+              },
+              "arrival_location": {
+                "code": "DEL",
+                "type": "AIRPORT",
+                "terminal": "3",
+                "gate": "",
+                "geo_coordinates": [
+                  28.55574,
+                  77.08614
+                ],
+                "name": "Delhi, India (DEL-Indira Gandhi Intl.)",
+                "city": "Delhi",
+                "romanized_city": "Delhi",
+                "metro": "Delhi, India (DEL-Indira Gandhi Intl.)",
+                "full_address": "Delhi, India (DEL-Indira Gandhi Intl.), DEL, Delhi",
+                "port_name_differs": true
+              },
+              "equipment_type": {
+                "code": "789",
+                "description": "789"
+              },
+              "traveler_info": [
+                {
+                  "user_id": 5144210,
+                  "status": {
+                    "code": "DRAFT",
+                    "name": "Not Booked",
+                    "booking_state": "DRAFT"
+                  },
+                  "booking_reference": "21787398077",
+                  "fare_basis": "KRCZAAW",
+                  "rules_and_regulations": {
+                    "full_disclosure": [
+                      "<ul><LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI><LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI><B>Airline rules & regulations</B><LI>Tickets are refundable.</LI><LI>Ticket must be purchased by 15-Dec-16.</LI><LI>Ticket changes may incur penalties and/or increased fares.</LI><LI>Tickets are nontransferable and name changes are not allowed.</LI><LI>Ticket prices include a nonrefundable booking fee.</LI><LI>Other penalties may apply.</LI></ul>"
+                    ],
+                    "rules": [
+                      {
+                        "message": "<LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI>"
+                      },
+                      {
+                        "message": "<LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI>"
+                      },
+                      {
+                        "message": "<B>Airline rules & regulations</B>"
+                      },
+                      {
+                        "message": "<LI>Tickets are refundable.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket must be purchased by 15-Dec-16.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket changes may incur penalties and/or increased fares.</LI>"
+                      },
+                      {
+                        "message": "<LI>Tickets are nontransferable and name changes are not allowed.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket prices include a nonrefundable booking fee.</LI>"
+                      },
+                      {
+                        "message": "<LI>Other penalties may apply.</LI>"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "distance": 11159,
+              "marketing_designation": {
+                "carrier_code": "AC",
+                "number": "72",
+                "carrier_name": "Air Canada",
+                "low_cost_carrier": false,
+                "seat_selection": true,
+                "icon_path": "/pubspec/images/airlines/AC.gif"
+              },
+              "baggage_allowance": {
+                "overall_restrictions": "Baggage fee information is provided for your convenience, and shows the generally applicable fees for baggage collected by the airline. Discounts may apply based on when payment is made (online vs. at the airport), frequent flier status, military status, or other factors. Additional fees for overweight/oversize bags may apply. In multiple-carrier itineraries, the applicable fees and baggage policies for the entire trip are determined by the first carrier on the ticket. In limited cases, exceptions to this rule may apply.  In the case of codeshare flights, the carrier in whose name the travel was sold will determine the baggage fees and policies.",
+                "ancillaries": [
+                  {
+                    "name": "Bag 1",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Bag 2",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Carry-on",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  }
+                ]
+              },
+              "date_change": "+2",
+              "duration": 850,
+              "class": {
+                "code": "ECONOMY/COACH CLASS(Q)",
+                "name": "ECONOMY/COACH CLASS(Q)"
+              },
+              "scheduled_departure_datetime": "2016-12-22T21:40:00-0800",
+              "scheduled_arrival_datetime": "2016-12-24T01:20:00+0530",
+              "duration_hours": 14,
+              "duration_mins": 10,
+              "multi_stop": false
+            }
+          ],
+          "departure_location": {
+            "code": "SEA",
+            "type": "AIRPORT",
+            "terminal": "",
+            "gate": "",
+            "geo_coordinates": [
+              47.44363,
+              -122.30175
+            ],
+            "name": "Seattle, WA (SEA-Seattle - Tacoma Intl.)",
+            "city": "Seattle",
+            "romanized_city": "Seattle",
+            "metro": "Seattle, WA (SEA-Seattle - Tacoma Intl.)",
+            "full_address": "Seattle, WA (SEA-Seattle - Tacoma Intl.), SEA, Seattle",
+            "port_name_differs": true
+          },
+          "arrival_location": {
+            "code": "DEL",
+            "type": "AIRPORT",
+            "terminal": "3",
+            "gate": "",
+            "geo_coordinates": [
+              28.55574,
+              77.08614
+            ],
+            "name": "Delhi, India (DEL-Indira Gandhi Intl.)",
+            "city": "Delhi",
+            "romanized_city": "Delhi",
+            "metro": "Delhi, India (DEL-Indira Gandhi Intl.)",
+            "full_address": "Delhi, India (DEL-Indira Gandhi Intl.), DEL, Delhi",
+            "port_name_differs": true
+          },
+          "start_datetime": "2016-12-22T11:55:00-0800",
+          "end_datetime": "2016-12-24T01:20:00+0530",
+          "scheduled_departure_datetime": "2016-12-22T11:55:00-0800",
+          "scheduled_arrival_datetime": "2016-12-24T01:20:00+0530",
+          "total_duration": {
+            "hours": 23,
+            "minutes": 55
+          },
+          "duration": {
+            "hours": 23,
+            "minutes": 55
+          },
+          "duration_hours": 23,
+          "duration_mins": 55,
+          "multi_destination": false,
+          "stops": 0,
+          "layovers": 1,
+          "stop_locations": [
+            {
+              "code": "YVR",
+              "type": "AIRPORT",
+              "terminal": "MAIN TERMINAL",
+              "gate": "",
+              "geo_coordinates": [
+                49.19481,
+                -123.17781
+              ],
+              "name": "Vancouver, BC, Canada (YVR-Vancouver Intl.)",
+              "city": "Vancouver",
+              "romanized_city": "Vancouver",
+              "metro": "Vancouver, BC, Canada (YVR-All Airports)",
+              "full_address": "Vancouver, BC, Canada (YVR-Vancouver Intl.), YVR, Vancouver, Vancouver, BC, Canada (YVR-All Airports)",
+              "port_name_differs": true
+            }
+          ],
+          "total_stops": 0,
+          "date_change": "+2",
+          "display_segments": [
+            {
+              "booking_code": "Q",
+              "departure_location": {
+                "code": "SEA",
+                "type": "AIRPORT",
+                "terminal": "",
+                "gate": "",
+                "geo_coordinates": [
+                  47.44363,
+                  -122.30175
+                ],
+                "name": "Seattle, WA (SEA-Seattle - Tacoma Intl.)",
+                "city": "Seattle",
+                "romanized_city": "Seattle",
+                "metro": "Seattle, WA (SEA-Seattle - Tacoma Intl.)",
+                "full_address": "Seattle, WA (SEA-Seattle - Tacoma Intl.), SEA, Seattle",
+                "port_name_differs": true
+              },
+              "arrival_location": {
+                "code": "YVR",
+                "type": "AIRPORT",
+                "terminal": "MAIN TERMINAL",
+                "gate": "",
+                "geo_coordinates": [
+                  49.19481,
+                  -123.17781
+                ],
+                "name": "Vancouver, BC, Canada (YVR-Vancouver Intl.)",
+                "city": "Vancouver",
+                "romanized_city": "Vancouver",
+                "metro": "Vancouver, BC, Canada (YVR-All Airports)",
+                "full_address": "Vancouver, BC, Canada (YVR-Vancouver Intl.), YVR, Vancouver, Vancouver, BC, Canada (YVR-All Airports)",
+                "port_name_differs": true
+              },
+              "operating_designation": {
+                "carrier_name": "AIR CANADA EXPRESS - JAZZ"
+              },
+              "equipment_type": {
+                "code": "DH4",
+                "description": "DE HAVILLAND DHC-8 DASH 8-400 DASH 8Q"
+              },
+              "traveler_info": [
+                {
+                  "user_id": 5144210,
+                  "status": {
+                    "code": "DRAFT",
+                    "name": "Not Booked",
+                    "booking_state": "DRAFT"
+                  },
+                  "booking_reference": "21787398077",
+                  "fare_basis": "KRCZAAW",
+                  "rules_and_regulations": {
+                    "full_disclosure": [
+                      "<ul><LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI><LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI><B>Airline rules & regulations</B><LI>Tickets are refundable.</LI><LI>Ticket must be purchased by 15-Dec-16.</LI><LI>Ticket changes may incur penalties and/or increased fares.</LI><LI>Tickets are nontransferable and name changes are not allowed.</LI><LI>Ticket prices include a nonrefundable booking fee.</LI><LI>Other penalties may apply.</LI></ul>"
+                    ],
+                    "rules": [
+                      {
+                        "message": "<LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI>"
+                      },
+                      {
+                        "message": "<LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI>"
+                      },
+                      {
+                        "message": "<B>Airline rules & regulations</B>"
+                      },
+                      {
+                        "message": "<LI>Tickets are refundable.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket must be purchased by 15-Dec-16.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket changes may incur penalties and/or increased fares.</LI>"
+                      },
+                      {
+                        "message": "<LI>Tickets are nontransferable and name changes are not allowed.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket prices include a nonrefundable booking fee.</LI>"
+                      },
+                      {
+                        "message": "<LI>Other penalties may apply.</LI>"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "distance": 206,
+              "marketing_designation": {
+                "carrier_code": "AC",
+                "number": "8122",
+                "carrier_name": "Air Canada",
+                "low_cost_carrier": false,
+                "seat_selection": true,
+                "icon_path": "/pubspec/images/airlines/AC.gif"
+              },
+              "baggage_allowance": {
+                "overall_restrictions": "Baggage fee information is provided for your convenience, and shows the generally applicable fees for baggage collected by the airline. Discounts may apply based on when payment is made (online vs. at the airport), frequent flier status, military status, or other factors. Additional fees for overweight/oversize bags may apply. In multiple-carrier itineraries, the applicable fees and baggage policies for the entire trip are determined by the first carrier on the ticket. In limited cases, exceptions to this rule may apply.  In the case of codeshare flights, the carrier in whose name the travel was sold will determine the baggage fees and policies.",
+                "ancillaries": [
+                  {
+                    "name": "Bag 1",
+                    "amount": 25,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Bag 2",
+                    "amount": 35,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Carry-on",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  }
+                ]
+              },
+              "layover": 531,
+              "duration": 54,
+              "class": {
+                "code": "ECONOMY/COACH CLASS(Q)",
+                "name": "ECONOMY/COACH CLASS(Q)"
+              },
+              "scheduled_departure_datetime": "2016-12-22T11:55:00-0800",
+              "scheduled_arrival_datetime": "2016-12-22T12:49:00-0800",
+              "port_change": false,
+              "duration_hours": 0,
+              "duration_mins": 54,
+              "layover_hours": 8,
+              "layover_mins": 51,
+              "code_share": true,
+              "multi_stop": false
+            },
+            {
+              "booking_code": "Q",
+              "departure_location": {
+                "code": "YVR",
+                "type": "AIRPORT",
+                "terminal": "MAIN TERMINAL",
+                "gate": "",
+                "geo_coordinates": [
+                  49.19481,
+                  -123.17781
+                ],
+                "name": "Vancouver, BC, Canada (YVR-Vancouver Intl.)",
+                "city": "Vancouver",
+                "romanized_city": "Vancouver",
+                "metro": "Vancouver, BC, Canada (YVR-All Airports)",
+                "full_address": "Vancouver, BC, Canada (YVR-Vancouver Intl.), YVR, Vancouver, Vancouver, BC, Canada (YVR-All Airports)",
+                "port_name_differs": true
+              },
+              "arrival_location": {
+                "code": "DEL",
+                "type": "AIRPORT",
+                "terminal": "3",
+                "gate": "",
+                "geo_coordinates": [
+                  28.55574,
+                  77.08614
+                ],
+                "name": "Delhi, India (DEL-Indira Gandhi Intl.)",
+                "city": "Delhi",
+                "romanized_city": "Delhi",
+                "metro": "Delhi, India (DEL-Indira Gandhi Intl.)",
+                "full_address": "Delhi, India (DEL-Indira Gandhi Intl.), DEL, Delhi",
+                "port_name_differs": true
+              },
+              "equipment_type": {
+                "code": "789",
+                "description": "789"
+              },
+              "traveler_info": [
+                {
+                  "user_id": 5144210,
+                  "status": {
+                    "code": "DRAFT",
+                    "name": "Not Booked",
+                    "booking_state": "DRAFT"
+                  },
+                  "booking_reference": "21787398077",
+                  "fare_basis": "KRCZAAW",
+                  "rules_and_regulations": {
+                    "full_disclosure": [
+                      "<ul><LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI><LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI><B>Airline rules & regulations</B><LI>Tickets are refundable.</LI><LI>Ticket must be purchased by 15-Dec-16.</LI><LI>Ticket changes may incur penalties and/or increased fares.</LI><LI>Tickets are nontransferable and name changes are not allowed.</LI><LI>Ticket prices include a nonrefundable booking fee.</LI><LI>Other penalties may apply.</LI></ul>"
+                    ],
+                    "rules": [
+                      {
+                        "message": "<LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. For international destinations, please confirm your flight with the airline at least 72 hours prior to departure. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI>"
+                      },
+                      {
+                        "message": "<LI>All passengers travelling to the USA must provide country of residence and details of the address they will be staying upon arrival (street name and number, city, zip code and state), during check-in. Failure to provide this may result in flight boarding being denied by the airline.</LI>"
+                      },
+                      {
+                        "message": "<B>Airline rules & regulations</B>"
+                      },
+                      {
+                        "message": "<LI>Tickets are refundable.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket must be purchased by 15-Dec-16.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket changes may incur penalties and/or increased fares.</LI>"
+                      },
+                      {
+                        "message": "<LI>Tickets are nontransferable and name changes are not allowed.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket prices include a nonrefundable booking fee.</LI>"
+                      },
+                      {
+                        "message": "<LI>Other penalties may apply.</LI>"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "distance": 11159,
+              "marketing_designation": {
+                "carrier_code": "AC",
+                "number": "72",
+                "carrier_name": "Air Canada",
+                "low_cost_carrier": false,
+                "seat_selection": true,
+                "icon_path": "/pubspec/images/airlines/AC.gif"
+              },
+              "baggage_allowance": {
+                "overall_restrictions": "Baggage fee information is provided for your convenience, and shows the generally applicable fees for baggage collected by the airline. Discounts may apply based on when payment is made (online vs. at the airport), frequent flier status, military status, or other factors. Additional fees for overweight/oversize bags may apply. In multiple-carrier itineraries, the applicable fees and baggage policies for the entire trip are determined by the first carrier on the ticket. In limited cases, exceptions to this rule may apply.  In the case of codeshare flights, the carrier in whose name the travel was sold will determine the baggage fees and policies.",
+                "ancillaries": [
+                  {
+                    "name": "Bag 1",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Bag 2",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  },
+                  {
+                    "name": "Carry-on",
+                    "amount": 0,
+                    "currency": "USD",
+                    "quantity": 0
+                  }
+                ]
+              },
+              "date_change": "+2",
+              "duration": 850,
+              "class": {
+                "code": "ECONOMY/COACH CLASS(Q)",
+                "name": "ECONOMY/COACH CLASS(Q)"
+              },
+              "scheduled_departure_datetime": "2016-12-22T21:40:00-0800",
+              "scheduled_arrival_datetime": "2016-12-24T01:20:00+0530",
+              "duration_hours": 14,
+              "duration_mins": 10,
+              "multi_stop": false
+            }
+          ],
+          "extra_segments": [],
+          "show_location_code": true,
+          "show_date_change": true,
+          "stops_layovers": 1,
+          "multi_layover": false,
+          "multi_stop": false,
+          "multi_stop_layover": false,
+          "too_many_stops": false,
+          "parsed": true
+        }
+      ],
+      "status": {
+        "code": "DRAFT",
+        "name": "Not Booked",
+        "booking_state": "DRAFT",
+        "showNonBlockingApprovalText": false
+      },
+      "start_datetime": "2016-12-16T03:30:00+0530",
+      "end_datetime": "2016-12-24T01:20:00+0530",
+      "isNaProduct": true,
+      "same_start_end_date": false,
+      "show_costSummary": true,
+      "show_responsive_more_actions": true,
+      "show_donot_apply_fee": true,
+      "changeSeatEnable": true,
+      "vendor_reference": "21787398077",
+      "booking_reference": "21787398077",
+      "showRulesRegulations": [
+        {
+          "name": "Bag 1",
+          "amount": 0,
+          "currency": "USD",
+          "quantity": 0
+        },
+        {
+          "name": "Bag 2",
+          "amount": 200,
+          "currency": "USD",
+          "quantity": 0
+        },
+        {
+          "name": "Carry-on",
+          "amount": 0,
+          "currency": "USD",
+          "quantity": 0
+        }
+      ],
+      "ticketed": false,
+      "add_loyalty": true,
+      "na_flight_fare_rules_link": "/pub/agent.dll?qscr=ffrs&itid=17873980&tovr=-1294217296",
+      "na_airline_liability_limits_link": "/pub/agent.dll?qscr=hgen&hfnm=warsaw.htx",
+      "showLoyaltyMsg": true,
+      "details": {
+        "total_distance": {
+          "miles": 15982,
+          "kms": 25720
+        }
+      },
+      "checkoutItem": false,
+      "show_baggage_allowance": true,
+      "display_rule_and_regulations": [
+        {
+          "name": "Bag 1",
+          "amount": 0,
+          "currency": "USD",
+          "quantity": 0
+        },
+        {
+          "name": "Bag 2",
+          "amount": 200,
+          "currency": "USD",
+          "quantity": 0
+        },
+        {
+          "name": "Carry-on",
+          "amount": 0,
+          "currency": "USD",
+          "quantity": 0
+        }
+      ],
+      "summary": {
+        "start_datetime": "2016-12-16T03:30:00+0530",
+        "start_text": "Delhi",
+        "end_text": "Seattle",
+        "start_text_secondary": "DEL",
+        "end_text_secondary": "SEA",
+        "description": "Delhi (DEL) - Seattle (SEA)"
+      },
+      "actionLinksMap": {},
+      "display_options": {
+        "status": {
+          "code": "DRAFT",
+          "name": "Not Booked",
+          "booking_state": "DRAFT",
+          "showNonBlockingApprovalText": false
+        },
+        "icons": {
+          "main": "icon-flightsalt",
+          "status": "icon-warn",
+          "item": "icon-flightsalt",
+          "item_alt": "icon-flightsalt"
+        },
+        "display": true,
+        "failed_autobook": false,
+        "actions": {
+          "cancel": false,
+          "change": true,
+          "manageBooking": false,
+          "show_change_menu": true,
+          "showSummaryPage": false,
+          "show_more_actions": true,
+          "reserve": true,
+          "purchase": true,
+          "update_loyalty_card": false,
+          "update_seat": false,
+          "change_name_preferences": false,
+          "notification_log": false,
+          "cost_to_change": false,
+          "more_lodging_info": false,
+          "edit_exchange": false,
+          "isBooker": true,
+          "issuanceDateNotPassed": true,
+          "book": false,
+          "allow_delete": true,
+          "show_additional_row": true,
+          "manually_charge_aab_fee": false,
+          "copy": true,
+          "add_loyalty_card": false,
+          "select_seat": false,
+          "fax_customer_config": false,
+          "resend_notification": false,
+          "rate": false,
+          "checkin": false,
+          "exchange": false,
+          "view_flight_cancellation_info": true,
+          "fare_rules": true,
+          "baggage_fees": false,
+          "airline_liability_limits": true
+        },
+        "consultant_actions": {
+          "refund": false,
+          "cancel": false,
+          "checkout": false,
+          "show_agent_notes": true,
+          "TCOnlyChange": false,
+          "showSummaryBtn": false
+        }
+      },
+      "approvalInfo": {
+        "showApproval": false
+      },
+      "cancelActionEligible": true,
+      "display_na_actions": true,
+      "display_consultant_actions": false,
+      "show_loyalty_message": false
+    }
+  ],
+  "booking_reference": "21787398077",
+  "summary": {
+    "messages": [
+      {
+        "importance": "HIGH",
+        "issuer": "Egencia",
+        "message": "<a href=\"http://www.cbp.gov/esta\"><b>ESTA authorization required</b></a> - All passengers traveling to or transferring through the United States under the Visa Waiver Program are required to obtain an electronic travel authorization prior to travel. You must request this authorization at least 72 hours prior to travel.\tTo apply, go to <a href=\"https://esta.cbp.dhs.gov\" target=\"_blank\">https://esta.cbp.dhs.gov</a>."
+      },
+      {
+        "importance": "HIGH",
+        "issuer": "Egencia",
+        "message": "Proof of citizenship is required for international travel - Be sure to bring all necessary documentation (passport, visa, etc.). To learn more, visit the <a href=\"/pub/agent.dll?qscr=cibt\"><b>CIBT VISA Service Website</b></a>."
+      }
+    ],
+    "travelers": [
+      {
+        "user_id": 5144210,
+        "first_name": "Emergency",
+        "last_name": "Contacts",
+        "romanized_first_name": "Emergency",
+        "romanized_last_name": "Contacts",
+        "email": "vatiwarv@egencia.com",
+        "main_traveler": true,
+        "occasional_traveler": false,
+        "items": [
+          {
+            "item_type": "FLIGHT",
+            "booking_reference": "21897398077",
+            "fare_basis_codes": [
+              "KRCZAAW"
+            ],
+            "origin_destinations": [
+              "Delhi",
+              "Frankfurt "
+            ],
+            "airports": [
+              "DEL",
+              "FRA",
+              "SEA",
+              "YVR"
+            ],
+            "cities": [
+              "Delhi",
+              "Frankfurt ",
+              "Seattle",
+              "Vancouver"
+            ],
+            "marketing_designations": [
+              "Lufthansa",
+              "Air Canada"
+            ],
+            "operating_designations": [
+              "AIR CANADA EXPRESS - JAZZ"
+            ],
+            "total_distance": 25720
+          }
+        ],
+        "primary_name": "Emergency Contacts",
+        "apis": [],
+        "select": true
+      }
+    ],
+    "cost_summary": [],
+    "total_price": {
+      "amount": 1360.95,
+      "currency": "USD"
+    },
+    "only_messages_reconstructed": false,
+    "reconstructed": false,
+    "extra_traveler_count": 0,
+    "reconstructed_messages": []
+  },
+  "start_datetime": "2016-12-16T03:30:00+0530",
+  "end_datetime": "2016-12-24T01:20:00+0530",
+  "past_trip": false,
+  "same_start_end_date": false,
+  "is_group_trip": false,
+  "external_group_ids": "17873980",
+  "actions": {
+    "splittable": false,
+    "mergable": true,
+    "cancelable": false,
+    "show_receipt": true,
+    "showTransactionHistory": true,
+    "showContactUs": true,
+    "isBooker": true,
+    "deletable": true,
+    "hide": false,
+    "history": false,
+    "itineraryHistory": false,
+    "purchaseBillingHistory": false,
+    "invitable": true,
+    "isConsultant": false,
+    "showTripHistory": false,
+    "allow_add_to_trip": true,
+    "manuallyChargeAAB": false,
+    "show_manage_trips": false,
+    "show_history_actions": false,
+    "show_horizontal_rule": false,
+    "show_footer_summary": false,
+    "addhotelCardEnabled": true,
+    "addflightCardEnabled": false,
+    "addCar": {
+      "id": "book-car",
+      "label": "Cars",
+      "url": "/pub/agent.dll?qscr=ghar&actn=bookcar&uact=10"
+    },
+    "addTrain": {
+      "id": "book-train",
+      "label": "Trains",
+      "url": "/pub/agent.dll?qscr=ghar&actn=booktrain&uact=10"
+    },
+    "addHotel": {
+      "id": "book-hotel",
+      "label": "Hotels",
+      "url": "/pub/agent.dll?qscr=ghar&actn=bookhotel&uact=10"
+    }
+  },
+  "us_rail_only_trip": false,
+  "de_rail_only_trip": false,
+  "checkout_add_to_trip": false,
+  "na_hotel_checkout_only_trip": false,
+  "merged": false,
+  "has_occasional_traveler": false,
+  "has_booked_hotel": false,
+  "meeting_related": false,
+  "has_only_fee_items": false,
+  "has_only_one_trip_na_item": true,
+  "has_agent_specific_message": false,
+  "is_arranging_view": true,
+  "customer_care": {
+    "email": "corptravel@customercare.egencia.com",
+    "phone": "+1 (866) 397-2677 or +1 (702) 939-2530"
+  },
+  "egencia_reference": "21787398077",
+  "show_add_hotel_card": true,
+  "has_flight_item": true,
+  "traveler": {
+    "user_id": 5144210,
+    "first_name": "Emergency",
+    "last_name": "Contacts",
+    "romanized_first_name": "Emergency",
+    "romanized_last_name": "Contacts",
+    "email": "vatiwarv@egencia.com",
+    "main_traveler": true,
+    "occasional_traveler": false,
+    "items": [
+      {
+        "item_type": "FLIGHT",
+        "booking_reference": "21787398077",
+        "fare_basis_codes": [
+          "KRCZAAW"
+        ],
+        "origin_destinations": [
+          "Delhi",
+          "Frankfurt "
+        ],
+        "airports": [
+          "DEL",
+          "FRA",
+          "SEA",
+          "YVR"
+        ],
+        "cities": [
+          "Delhi",
+          "Frankfurt ",
+          "Seattle",
+          "Vancouver"
+        ],
+        "marketing_designations": [
+          "Lufthansa",
+          "Air Canada"
+        ],
+        "operating_designations": [
+          "AIR CANADA EXPRESS - JAZZ"
+        ],
+        "total_distance": 25720
+      }
+    ],
+    "primary_name": "Emergency Contacts",
+    "apis": [],
+    "select": true
+  },
+  "contextPath": "/trip-webapp",
+  "seatNotConfirmAlertFlag": false,
+  "enableFlightExchangeMsg": false,
+  "enableGroupTrips": true,
+  "showGrpTrips": true,
+  "external_na_group_ids": "17873980"
+}

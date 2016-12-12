@@ -1,0 +1,420 @@
+{
+  "name": "Denver, CO",
+  "items": [
+    {
+      "item_type": "FLIGHT",
+      "travelers": [
+        {
+          "user_id": 5144785,
+          "company_id": 33985,
+          "main_traveler": true,
+          "occasional_traveler": false,
+          "first_name": "Ototr",
+          "last_name": "Relvart",
+          "romanized_first_name": "Ototr",
+          "romanized_last_name": "Relvart",
+          "email": "AutoTraveler@noemail.com",
+          "customer_care": {
+            "email": "corptravel@customercare.egencia.com",
+            "phone": "+1 (866) 397-2677 or +1 (702) 939-2530"
+          }
+        }
+      ],
+      "external_item": {
+        "external_system": "NA",
+        "line_id": "26"
+      },
+      "links": {
+        "cancel": "qscr=tpac&itid=17873980&itdx=26&actn=cancel",
+        "exchangev1": "qscr=cexf&itid=17873980&itdx=26&acmd=aflt&vwtp=2&usel=2&rfrr=-51444",
+        "exchange": "qscr=tpac&itid=17873980&itdx=26&actn=exchange",
+        "cancelv1": "qscr=cexf&itid=17873980&itdx=26&acmd=aflt&vwtp=2&usel=1&rfrr=-51444"
+         "book": "qscr=cexf&itid=17873980&itdx=26&acmd=aflt&vwtp=2&usel=1&rfrr=-51444"
+      },
+      "approval_setting": "",
+      "locale": "en-US",
+      "company": {
+        "company_id": 33985,
+        "name": "CICDBasicComp20160216141636899"
+      },
+      "messages": [
+        
+      ],
+      "pricing": {
+        "breakdown": [
+          {
+            "type": "Base",
+            "amount": 1308.84
+          },
+          {
+            "type": "Taxes and Airline fees",
+            "amount": 134.86
+          }
+        ],
+        "amount": 1443.7,
+        "currency": "USD"
+      },
+      "reservations": [
+        {
+          "booking": {
+            "type": "ONLINE",
+            "provider": "SABRE",
+            "booked_by": {
+              
+            },
+            "main_contact": {
+              "name": "Ototr Relvart",
+              "email": "AutoTraveler@noemail.com"
+            }
+          },
+          "pricing": {
+            "traveler_prices": [
+              {
+                "user_id": 5144785,
+                "breakdown": [
+                  {
+                    "type": "Base",
+                    "amount": 1308.84
+                  },
+                  {
+                    "type": "Taxes and Airline fees",
+                    "amount": 134.86
+                  }
+                ],
+                "amount": 1443.7,
+                "currency": "USD"
+              }
+            ]
+          },
+          "fees": [
+            {
+              "type": "Unknown",
+              "title": "Agent assisted air purchase fee",
+              "amount": 22,
+              "currency": "USD"
+            }
+          ]
+        }
+      ],
+      "currency_exchange": {
+        "USD": {
+          "USD": 1
+        }
+      },
+      "origin_destinations": [
+        {
+          "segments": [
+            {
+              "class": {
+                "code": "Economy/Coach Class(Y)",
+                "name": "Economy/Coach Class(Y)"
+              },
+              "booking_code": "Y",
+              "scheduled_departure_datetime": "2017-03-11T06:00-0700",
+              "scheduled_arrival_datetime": "2017-03-11T07:00-0800",
+              "distance": 950,
+              "departure_location": {
+                "code": "SLC",
+                "type": "AIRPORT",
+                "name": "Salt Lake City, UT (SLC-Salt Lake City Intl.)",
+                "city": "Salt Lake City",
+                "romanized_city": "Salt Lake City",
+                "metro": "Salt Lake City, UT (SLC-Salt Lake City Intl.)",
+                "terminal": "UNIT 1",
+                "gate": ""
+              },
+              "arrival_location": {
+                "code": "LAX",
+                "type": "AIRPORT",
+                "name": "Los Angeles, CA (LAX-Los Angeles Intl.)",
+                "city": "Los Angeles",
+                "romanized_city": "Los Angeles",
+                "metro": "Los Angeles, CA (LAX-Los Angeles Intl.)",
+                "terminal": "6",
+                "gate": ""
+              },
+              "marketing_designation": {
+                "carrier_code": "AS",
+                "carrier_name": "Alaska Airlines",
+                "number": "722",
+                "low_cost_carrier": false,
+                "seat_selection": true
+              },
+              "equipment_type": {
+                "code": "739",
+                "description": "Boeing 737-900"
+              },
+              "baggage_allowance": {
+                "ancillaries": [
+                  {
+                    "name": "Bag 1",
+                    "amount": 25,
+                    "currency": "USD"
+                  },
+                  {
+                    "name": "Bag 2",
+                    "amount": 25,
+                    "currency": "USD"
+                  },
+                  {
+                    "name": "Carry-on",
+                    "amount": 0,
+                    "currency": "USD"
+                  }
+                ],
+                "overall_restrictions": "Baggage fee information is provided for your convenience, and shows the generally applicable fees for baggage collected by the airline. Discounts may apply based on when payment is made (online vs. at the airport), frequent flier status, military status, or other factors. Additional fees for overweight/oversize bags may apply. In multiple-carrier itineraries, the applicable fees and baggage policies for the entire trip are determined by the first carrier on the ticket. In limited cases, exceptions to this rule may apply.  In the case of codeshare flights, the carrier in whose name the travel was sold will determine the baggage fees and policies."
+              },
+              "traveler_info": [
+                {
+                  "user_id": 5144785,
+                  "booking_reference": "21787386961",
+                  "fare_basis": "YA2AA",
+                  "rules_and_regulations": {
+                    "rules": [
+                      {
+                        "message": "<LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI>"
+                      },
+                      {
+                        "message": "<B>Airline rules & regulations</B>"
+                      },
+                      {
+                        "message": "<LI>Tickets are refundable. Ticket changes may incur penalties and/or increased fares.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket must be purchased by 12-Dec-16.</LI>"
+                      },
+                      {
+                        "message": "<LI>Tickets are nontransferable and name changes are not allowed.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket prices include a nonrefundable booking fee.</LI>"
+                      },
+                      {
+                        "message": "<LI>Other penalties may apply.</LI>"
+                      }
+                    ]
+                  },
+                  "status": {
+                    "booking_state": "DRAFT"
+                  }
+                }
+              ]
+            },
+            {
+              "class": {
+                "code": "Economy/Coach Class(Y)",
+                "name": "Economy/Coach Class(Y)"
+              },
+              "booking_code": "Y",
+              "scheduled_departure_datetime": "2017-03-11T09:45-0800",
+              "scheduled_arrival_datetime": "2017-03-11T13:20-0700",
+              "distance": 1366,
+              "departure_location": {
+                "code": "LAX",
+                "type": "AIRPORT",
+                "name": "Los Angeles, CA (LAX-Los Angeles Intl.)",
+                "city": "Los Angeles",
+                "romanized_city": "Los Angeles",
+                "metro": "Los Angeles, CA (LAX-Los Angeles Intl.)",
+                "terminal": "6",
+                "gate": ""
+              },
+              "arrival_location": {
+                "code": "DEN",
+                "type": "AIRPORT",
+                "name": "Denver, CO (DEN-Denver Intl.)",
+                "city": "Denver",
+                "romanized_city": "Denver",
+                "metro": "Denver, CO (DEN-All Airports)",
+                "terminal": "",
+                "gate": ""
+              },
+              "marketing_designation": {
+                "carrier_code": "AS",
+                "carrier_name": "Alaska Airlines",
+                "number": "4162",
+                "low_cost_carrier": false,
+                "seat_selection": true
+              },
+              "operating_designation": {
+                "carrier_name": "COMPASS AIRLINES AS AMERICAN EAGLE",
+                "carrier_code": "AA",
+                "number": "6005"
+              },
+              "equipment_type": {
+                "code": "E75",
+                "description": "E75"
+              },
+              "baggage_allowance": {
+                "ancillaries": [
+                  {
+                    "name": "Bag 1",
+                    "amount": 25,
+                    "currency": "USD"
+                  },
+                  {
+                    "name": "Bag 2",
+                    "amount": 25,
+                    "currency": "USD"
+                  },
+                  {
+                    "name": "Carry-on",
+                    "amount": 0,
+                    "currency": "USD"
+                  }
+                ],
+                "overall_restrictions": "Baggage fee information is provided for your convenience, and shows the generally applicable fees for baggage collected by the airline. Discounts may apply based on when payment is made (online vs. at the airport), frequent flier status, military status, or other factors. Additional fees for overweight/oversize bags may apply. In multiple-carrier itineraries, the applicable fees and baggage policies for the entire trip are determined by the first carrier on the ticket. In limited cases, exceptions to this rule may apply.  In the case of codeshare flights, the carrier in whose name the travel was sold will determine the baggage fees and policies."
+              },
+              "traveler_info": [
+                {
+                  "user_id": 5144785,
+                  "booking_reference": "21787386961",
+                  "fare_basis": "YA2AA",
+                  "rules_and_regulations": {
+                    "rules": [
+                      {
+                        "message": "<LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI>"
+                      },
+                      {
+                        "message": "<B>Airline rules & regulations</B>"
+                      },
+                      {
+                        "message": "<LI>Tickets are refundable. Ticket changes may incur penalties and/or increased fares.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket must be purchased by 12-Dec-16.</LI>"
+                      },
+                      {
+                        "message": "<LI>Tickets are nontransferable and name changes are not allowed.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket prices include a nonrefundable booking fee.</LI>"
+                      },
+                      {
+                        "message": "<LI>Other penalties may apply.</LI>"
+                      }
+                    ]
+                  },
+                  "meal_requested": "Food For Purchase",
+                  "status": {
+                    "booking_state": "DRAFT"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "messages": [
+                {
+                  "title": "SUPPLY_MESSAGE",
+                  "message": "Please check in with Skywest Air. If checking in at a kiosk, use your name rather than confirmation number."
+                }
+              ],
+              "class": {
+                "code": "Economy/Coach Class(M)",
+                "name": "Economy/Coach Class(M)"
+              },
+              "booking_code": "M",
+              "scheduled_departure_datetime": "2017-03-18T19:00-0700",
+              "scheduled_arrival_datetime": "2017-03-18T20:34-0700",
+              "distance": 613,
+              "departure_location": {
+                "code": "DEN",
+                "type": "AIRPORT",
+                "name": "Denver, CO (DEN-Denver Intl.)",
+                "city": "Denver",
+                "romanized_city": "Denver",
+                "metro": "Denver, CO (DEN-All Airports)",
+                "terminal": "",
+                "gate": ""
+              },
+              "arrival_location": {
+                "code": "SLC",
+                "type": "AIRPORT",
+                "name": "Salt Lake City, UT (SLC-Salt Lake City Intl.)",
+                "city": "Salt Lake City",
+                "romanized_city": "Salt Lake City",
+                "metro": "Salt Lake City, UT (SLC-Salt Lake City Intl.)",
+                "terminal": "",
+                "gate": ""
+              },
+              "marketing_designation": {
+                "carrier_code": "UA",
+                "carrier_name": "UNITED",
+                "number": "5893",
+                "low_cost_carrier": false,
+                "seat_selection": true
+              },
+              "operating_designation": {
+                "carrier_name": "/SKYWEST DBA UNITED EXPRESS",
+                "carrier_code": "OO"
+              },
+              "equipment_type": {
+                "code": "E7W",
+                "description": "E7W"
+              },
+              "baggage_allowance": {
+                "ancillaries": [
+                  {
+                    "name": "Bag 1",
+                    "amount": 25,
+                    "currency": "USD"
+                  },
+                  {
+                    "name": "Bag 2",
+                    "amount": 35,
+                    "currency": "USD"
+                  },
+                  {
+                    "name": "Carry-on",
+                    "amount": 0,
+                    "currency": "USD"
+                  }
+                ],
+                "overall_restrictions": "Baggage fee information is provided for your convenience, and shows the generally applicable fees for baggage collected by the airline. Discounts may apply based on when payment is made (online vs. at the airport), frequent flier status, military status, or other factors. Additional fees for overweight/oversize bags may apply. In multiple-carrier itineraries, the applicable fees and baggage policies for the entire trip are determined by the first carrier on the ticket. In limited cases, exceptions to this rule may apply.  In the case of codeshare flights, the carrier in whose name the travel was sold will determine the baggage fees and policies."
+              },
+              "traveler_info": [
+                {
+                  "user_id": 5144785,
+                  "booking_reference": "21787386961",
+                  "fare_basis": "YA2AA",
+                  "rules_and_regulations": {
+                    "rules": [
+                      {
+                        "message": "<LI>Please be sure to re-confirm your flight at least 24 hours prior to scheduled departure (72 hours prior for flights to Hawaii and international destinations) You may check your flight status and departure gate online, or contact <a href=\"https://www.egencia.com//pub/agent.dll?qscr=alni\">the airline</a> directly. Seat assignments, meal preferences, and special requests must be confirmed with the airline; we cannot guarantee that they will be honored.</LI>"
+                      },
+                      {
+                        "message": "<B>Airline rules & regulations</B>"
+                      },
+                      {
+                        "message": "<LI>Tickets are refundable. Ticket changes may incur penalties and/or increased fares.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket must be purchased by 12-Dec-16.</LI>"
+                      },
+                      {
+                        "message": "<LI>Tickets are nontransferable and name changes are not allowed.</LI>"
+                      },
+                      {
+                        "message": "<LI>Ticket prices include a nonrefundable booking fee.</LI>"
+                      },
+                      {
+                        "message": "<LI>Other penalties may apply.</LI>"
+                      }
+                    ]
+                  },
+                  "status": {
+                    "booking_state": "DRAFT"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

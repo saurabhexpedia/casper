@@ -1,0 +1,68 @@
+package com.egencia.rss.commons.context;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.core.NamedInheritableThreadLocal;
+
+/**
+ * AppContext class is a context holder for storing key-value data which will be used
+ * part of ThreadLocal.
+ * 
+ * @author gurssingh
+ * 
+ */
+public class AppContext {
+
+        private static final ThreadLocal<Map<String, Object>> appThreadLocal =
+    				new NamedInheritableThreadLocal<Map<String, Object>>("User Context");
+        
+        /**
+         * Method to initialize context.
+         * 
+         * @param context
+         */
+        public static void initContext() {
+                final Map<String, Object> context = new HashMap<>();
+                appThreadLocal.set(context);
+        }
+        
+        /**
+         * Method to set property to AppContext.
+         * 
+         * @param context
+         */
+        public static void put(String key, Object value) {
+                if (key == null) {
+                        throw new IllegalArgumentException("key parameter cannot be null");
+                }
+                appThreadLocal.get().put(key, value);
+        }
+
+        /**
+         * Method to remove entry from AppContext.
+         */
+        public static void remove(String key) {
+                appThreadLocal.get().remove(key);
+        }
+
+        /**
+         * Method to get object from AppContext.
+         * @return
+         */
+        public static Object get(String key) {
+                if (key == null) {
+                        throw new IllegalArgumentException("key parameter cannot be null");
+                }
+                return appThreadLocal.get().get(key);
+        }
+        
+       
+        /**
+         * Method to clear context of AppThreadLocal.
+         */
+        public static void clearContext() {
+                appThreadLocal.get().clear();
+                appThreadLocal.remove();
+        }
+}

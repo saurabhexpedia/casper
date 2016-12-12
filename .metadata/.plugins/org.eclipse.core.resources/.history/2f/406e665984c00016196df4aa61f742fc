@@ -1,0 +1,192 @@
+package com.egencia.webapp.casper.controller;
+
+
+import com.egencia.webapp.casper.Routes;
+import com.egencia.webapp.casper.client.FlightsRestClient;
+import com.egencia.webapp.casper.model.Casper;
+import com.egencia.webapp.casper.model.DepartureDateTime;
+import com.egencia.webapp.casper.model.DestinationLocation;
+import com.egencia.webapp.casper.model.OriginDestinationRequest;
+import com.egencia.webapp.casper.model.OriginLocation;
+import com.egencia.webapp.casper.model.SearchRequest;
+import com.egencia.webapp.casper.model.SearchResponse;
+import com.egencia.webapp.casper.model.Traveler;
+import com.egencia.webapp.casper.model.trip.Item;
+import com.egencia.webapp.casper.model.trip.TripRequest;
+import com.egencia.webapp.users.common.utils.AppContext;
+
+import org.apache.commons.io.IOUtils;
+import org.codehaus.plexus.component.annotations.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
+import java.util.Map;
+
+/**
+ * 	Casper's Controller
+ *  NOTE: By convention method names match the name of their View, e.g. HotelController.index() returns views/hotel/index
+ */
+@Controller
+public class CasperController {
+
+@Autowired
+protected Environment environment;
+
+    @Value("classpath:data.json")
+    private Resource searchResult;
+    
+    @Value("classpath:triprquest.json")
+    private Resource tripRequestJson;
+    
+    @Autowired
+    private ObjectMapper objectMapper;
+
+
+/**
+ * Casper's Home page
+ * @param model
+ * @return
+ * @throws Exception
+ */
+    @RequestMapping("")
+    public String index(ModelMap model) throws Exception {
+        // Add properties to EG that need to be available client-side and use EG.boostrapped for bootstrapped data
+        Map eg = (Map) model.get("EG");
+        Map bootstapped = (Map) eg.get("bootstrapped");
+
+        // Get some data from the mock service
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, Object> hotels = objectMapper.readValue(searchResult.getFile(), HashMap.class);
+
+        // Put data on the model
+        bootstapped.put("hotels", hotels.get("hotelResultList"));
+        model.addAttribute("pageTitle", "Casper");
+
+        return Routes.CASPER + "/index";
+    }
+
+
+    /**
+     * Casper Details page
+     * @param id
+     * @param model
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/details/{id}")
+
+    public String details(@PathVariable("id") final String id, ModelMap model) throws Exception {
+        //get data from global services, and create some models
+        //here we just use some fake data
+        Casper casper = new Casper();
+        casper.setId(id);
+        casper.setName("The Brennan");
+        casper.setDescription("It's a classy place, very minimal amount of mafia activity.");
+        casper.setPhotos(new String[]{"http://media.expedia.com/hotels/1000000/20000/11700/11672/11672_32_t.jpg", "http://media.expedia.com/hotels/1000000/20000/11700/11672/11672_32_l.jpg", "http://media.expedia.com/hotels/1000000/20000/11700/11672/11672_32_b.jpg"});
+        casper.setPrice(new BigDecimal(359.99));
+
+        //add stuff to the ModelMap
+        model.addAttribute("casper", casper);
+
+        return Routes.CASPER + "/details";
+    }
+    
+    @Autowired
+    private FlightsRestClient flightsRestClient;
+    
+    /**
+     * Casper Details page
+     * @param id
+     * @param model
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/doit")
+    @ResponseBody
+    public String doit() throws Exception {
+    	AppContext.initContext();   	
+    	SearchRequest searchRequest = new SearchRequest();
+    	OriginDestinationRequest originDestinationRequest = new OriginDestinationRequest();
+    	OriginLocation originLocation = new OriginLocation();
+    	originLocation.setCode("PAR");
+    	originLocation.setName("Paris, France (PAR-All Airports)");
+    	originDestinationRequest.setOriginLocation(originLocation);
+    	DestinationLocation destinationLocation = new DestinationLocation();
+    	destinationLocation.setCode("SEA");
+    	destinationLocation.setName("Seattle, WA, United States (SEA-Seattle - Tacoma Intl.)");
+    	originDestinationRequest.setDestinationLocation(destinationLocation);
+    	DepartureDateTime departureDateTime = new DepartureDateTime();
+    	departureDateTime.setDate("2016-12-15");
+    	originDestinationRequest.setDepartureDateTime(departureDateTime);
+    	
+    	
+    	
+    	OriginDestinationRequest originDestinationRequest2 = new OriginDestinationRequest();
+    	OriginLocation originLocation2 = new OriginLocation();
+    	originLocation2.setCode("SEA");
+    	originLocation2.setName("Seattle, WA, United States (SEA-Seattle - Tacoma Intl.)");
+    	originDestinationRequest2.setOriginLocation(originLocation2);
+    	DestinationLocation destinationLocation2 = new DestinationLocation();
+    	destinationLocation2.setCode("PAR");
+    	destinationLocation2.setName("Paris, France (PAR-All Airports)");
+    	originDestinationRequest2.setDestinationLocation(destinationLocation2);
+    	DepartureDateTime departureDateTime2 = new DepartureDateTime();
+    	departureDateTime2.setDate("2017-1-9");
+    	originDestinationRequest2.setDepartureDateTime(departureDateTime2);
+       List<OriginDestinationRequest> originDestinationRequests = new ArrayList<>();
+       originDestinationRequests.add(originDestinationRequest);
+       originDestinationRequests.add(originDestinationRequest2);
+
+       
+       
+       
+    	searchRequest.setOriginDestinationRequests(originDestinationRequests);
+    	searchRequest.setRefundableFaresOnly(false);
+    	List<Traveler> travelers = new ArrayList<>();
+    	Map userData = flightsRestClient.getUserData();
+    	Traveler traveler = new Traveler();
+    	traveler.setCompanyId((Integer)userData.get("companyId"));
+    	traveler.setUserId((Integer)userData.get("userId"));
+    	traveler.setOccasionalTraveler(false);
+    	travelers.add(traveler);
+    	searchRequest.setTravelers(travelers);
+    	String searchId = flightsRestClient.searchIdByRequest(searchRequest);
+    	Thread.sleep(5000);
+    	System.out.println("SearchId found. waiting for Results to be fetched");
+    	SearchResponse searchResponse = flightsRestClient.getResultsBySearchId(searchId);
+    	System.out.println("Results received"+searchResponse);
+    	String tripRequesJsonString  = IOUtils.toString(this.getClass().getClassLoader().getResourceAsStream("triprequest.json"));
+    	TripRequest tripRequest = objectMapper.readValue(tripRequesJsonString, TripRequest.class);
+    	updateTripRequest(tripRequest, userData, searchResponse);
+    	flightsRestClient.createDraftTrip(tripRequest);
+    	System.out.println("&&&&&&&&&&&&"+searchId);
+        return searchId;
+    }
+
+
+	private void updateTripRequest(TripRequest tripRequest, Map userData,SearchResponse searchResponse) {
+		tripRequest.setName("My Trip");
+		Item item = new Item();
+		com.egencia.webapp.casper.model.trip.Traveler traveler = new com.egencia.webapp.casper.model.trip.Traveler();
+		traveler.setFirstName(String.valueOf(userData.get("firstName")));
+		// TODO Auto-generated method stub
+		
+	}
+
+
+}
+

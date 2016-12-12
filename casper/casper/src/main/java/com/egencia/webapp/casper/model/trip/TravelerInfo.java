@@ -1,5 +1,5 @@
 
-package com.egencia.webapp.casper.model;
+package com.egencia.webapp.casper.model.trip;
 
 import java.util.HashMap;
 import java.util.Map;

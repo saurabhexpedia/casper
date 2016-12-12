@@ -1,0 +1,23 @@
+{
+  "email_type": "RESEND",
+  "notification_type": "Email",
+  "trip_id": "E000-2184-147",
+  "transport_properties": {
+    "email": {
+      "from": "corptravel@customercare.egencia.com",
+      "subject": "Paris, France for Amol Behrani - 2016-12-15 (21787395468) "
+    }
+  },
+  "to": {
+    "emails": [
+      "sparakh@egencia.com"
+    ]
+  },
+  "email_configuration": {
+    "locale": "en-US",
+    "attach_pdf": false
+  },
+  "email_customization": {
+    "override_content": "fdsfdsd"
+  }
+}
