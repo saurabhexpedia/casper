@@ -1,0 +1,211 @@
+package com.egencia.webapp.casper.client;
+
+import com.egencia.auth.AuthorizationPayload;
+import com.egencia.webapp.casper.model.SearchRequest;
+import com.egencia.webapp.casper.model.SearchResponse;
+import com.egencia.webapp.users.common.utils.AuthUtil;
+import com.egencia.webapp.users.common.utils.CommonConfiguration;
+import com.egencia.webapp.users.common.utils.Constants;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+
+/**
+ * The Class UserServiceRestClient.
+ */
+@Component
+@EnableCaching
+public class FlightsRestClient implements InitializingBean {
+
+    /**
+     * LOGGER *.
+     */
+    private final static Logger LOGGER = LoggerFactory.getLogger(FlightsRestClient.class);
+
+    public static final String V1_TOKENS_PATH = "/v1/tokens";
+    public static final String OAUTH_GRANT_TYPE = "grant_type";
+    public static final String OAUTH_GRANT_TYPE_CLIENT_CREDENTIALS = "client_credentials";
+
+    /**
+     * The auth utils.
+     */
+    @Inject
+    private AuthUtil authUtils;
+
+    /**
+     * The configuration.
+     */
+    @Inject
+    private CommonConfiguration configuration;
+
+    /**
+     * jacksonObject mapper
+     **/
+    @Inject
+    @Named("userWebappObjectMapper")
+    private ObjectMapper jacksonObjectMapper;
+
+    /**
+     * The base url.
+     */
+    private String flightsBaseUrl;
+
+    /**
+     * The rest template.
+     */
+    @Inject
+    private RestTemplate restTemplate;
+
+    /**
+     * Sets the rest template.
+     *
+     * @param restTemplate the new rest template
+     */
+    public void setRestTemplate(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see org.springframework.beans.factory.InitializingBean#afterPropertiesSet()
+     */
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        // Sets the baseUrl for user-service
+        this.flightsBaseUrl = configuration.getStringProperty(Constants.FLIGHTS_BASE_URI);
+        if (StringUtils.isEmpty(flightsBaseUrl)) {
+            throw new Exception("User-service BaseUrl cannot be null");
+        }
+    }
+
+    /**
+     * Gets the user service url.
+     *
+     * @param key the key
+     * @return the user service url
+     */
+    public String getFlightsUrl(String key) {
+        StringBuilder urlBuilder = new StringBuilder();
+        urlBuilder.append(flightsBaseUrl);
+        urlBuilder.append(Constants.URL_SEPERATOR);
+
+        String postfixUrl = configuration.getStringProperty(key);
+        urlBuilder.append(postfixUrl);
+        return urlBuilder.toString();
+    }
+
+
+
+    private String getServiceToken() {
+        String url = configuration.getStringProperty(Constants.AUTH_SERVICE_URL);
+
+        UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromUriString(url);
+        uriComponentsBuilder.path(V1_TOKENS_PATH);
+
+        uriComponentsBuilder.queryParam(OAUTH_GRANT_TYPE, OAUTH_GRANT_TYPE_CLIENT_CREDENTIALS);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+        headers.set("Authorization", "Basic "+configuration.getStringProperty(Constants.AUTH_BASIC_AUTH_URL));
+
+
+        HttpEntity<AuthorizationPayload> requestEntity
+                = new HttpEntity<>(null, headers);
+
+        ResponseEntity<AuthorizationPayload> responseEntity
+                = restTemplate.exchange(
+                uriComponentsBuilder.build().toUriString(),
+                HttpMethod.POST,
+                requestEntity,
+                AuthorizationPayload.class);
+
+        String serviceToken = null;
+
+        if (HttpStatus.OK.equals(responseEntity.getStatusCode())) {
+            if (responseEntity.getBody() != null) {
+                serviceToken = String.valueOf(responseEntity.getBody().getAccessToken());
+            }
+        }
+
+        return "Bearer " + serviceToken;
+
+
+    }
+
+    /**
+     * Adds the authorization header.
+     *
+     * @param authToken the auth token
+     * @param locale    the locale
+     * @return the http headers
+     */
+    protected HttpHeaders addAuthorizationHeader(String authToken, String locale) {
+        HttpHeaders requestHeaders = new HttpHeaders();
+        requestHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+        requestHeaders.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+        requestHeaders.add("Authorization", authToken);
+        if (StringUtils.isNotBlank(locale)) {
+            requestHeaders.add("locale", locale);
+        }
+        return requestHeaders;
+    }
+    
+    /**
+     * Gets the user list. by given filter search criteria.
+     *
+     * @param requestPayLoad the request pay load
+     * @param url            the url
+     * @return the user list
+     * @throws Exception the exception
+     */
+    public SearchResponse searchUsersByFilter(SearchRequest searchRequest) throws Exception {
+        // TODO: Check implementation again
+        HttpHeaders headers = addAuthorizationHeader(authUtils.getAuthToken(), null);
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        String payloadInJson = jacksonObjectMapper.writeValueAsString(searchRequest);
+        LOGGER.info("Request payload : " + payloadInJson);
+        HttpEntity<String> requestEntity = new HttpEntity<String>(payloadInJson, headers);
+
+        String language = LocaleResolver.getLocale().getLanguage();
+        url = StringUtils.replace(url, Constants.EGENCIA_LOCALE, language);
+
+        try {
+            ResponseEntity<UserGlobalSearchResponseListBean> responseEntity = restTemplate.exchange(url, HttpMethod.POST, requestEntity,
+                    UserGlobalSearchResponseListBean.class);
+            if (responseEntity.getStatusCode() == HttpStatus.OK) {
+                LOGGER.info("Response received from the user_service");
+                UserGlobalSearchResponseListBean responseData = responseEntity.getBody();
+                LOGGER.info("Response received from the user_service, total number of records found = " + responseData.getMetaInfo().getTotalHits());
+                return responseData;
+            }
+        } catch (Exception e) {
+            LOGGER.error("Exception occured in calling searchUsersByFilter()" + e.getMessage());
+            throw new Exception(e.getMessage());
+        }
+
+        return null;Sea
+    }
+
+}

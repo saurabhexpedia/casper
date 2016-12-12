@@ -6,9 +6,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import com.egencia.library.uitoolkit.interceptors.HeaderFooterModelInterceptor;
+import com.egencia.webapp.users.common.utils.CommonConfiguration;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -38,6 +41,7 @@ import java.util.List;
 @Configuration
 @EnableWebMvc
 @ComponentScan(value = {"com.egencia"}, excludeFilters = @ComponentScan.Filter({Configuration.class}))
+@Import({CommonConfiguration.class})
 public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
 
     @Autowired

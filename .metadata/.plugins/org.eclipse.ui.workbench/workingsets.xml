@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
 <workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1481528018456_0" label="casper-parent" name="casper-parent">
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/casper" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/casper-acceptance" type="4"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1481528282311_1" label="Window Working Set" name="Aggregate for window 1481528282311"/>

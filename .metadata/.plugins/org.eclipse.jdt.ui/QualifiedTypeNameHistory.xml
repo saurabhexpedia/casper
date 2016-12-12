@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.egencia.webapp.users.common.utils.AuthUtil"/>
+<fullyQualifiedTypeName name="com.egencia.webapp.users.common.constants.Constants"/>
+<fullyQualifiedTypeName name="com.egencia.webapp.casper.model.Searchrequest"/>
+<fullyQualifiedTypeName name="com.egencia.webapp.casper.model.SearchResponse"/>
+<fullyQualifiedTypeName name="com.egencia.webapp.users.common.utils.Constants"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.egencia.webapp.casper.client.FlightsRestClient"/>
+<fullyQualifiedTypeName name="com.egencia.webapp.casper.model.SearchRequest"/>
+<fullyQualifiedTypeName name="com.egencia.webapp.casper.model.OriginLocation"/>
+<fullyQualifiedTypeName name="com.egencia.webapp.casper.model.DestinationLocation"/>
+<fullyQualifiedTypeName name="com.egencia.webapp.casper.model.DepartureDateTime"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="com.egencia.webapp.casper.model.OriginDestinationRequest"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.egencia.webapp.casper.model.Traveler"/>
+<fullyQualifiedTypeName name="com.egencia.webapp.users.common.utils.CommonConfiguration"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Import"/>
+<fullyQualifiedTypeName name="org.apache.commons.lang.StringUtils"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+</qualifiedTypeNameHistroy>

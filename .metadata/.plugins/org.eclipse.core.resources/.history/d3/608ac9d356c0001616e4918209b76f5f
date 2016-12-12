@@ -1,0 +1,163 @@
+package com.egencia.webapp.users.common.utils;
+
+import com.egencia.auth.AuthorizationSession;
+import com.egencia.auth.UserData;
+import org.apache.commons.collections.CollectionUtils;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * The Class AuthUtil.
+ *
+ * @author pavankumar.sp
+ */
+@Component
+public class AuthUtil {
+    private final int[] NA_PRODUCT_IDS = {60000, 60004};
+
+    /**
+     * Gets the auth token.
+     *
+     * @return the auth token
+     */
+    public String getAuthToken() {
+        return "XZhsCe-LAsX2cxsYUG0tVRMe1QngXfst.na";
+    }
+
+    /**
+     * Gets the auth session.
+     *
+     * @return the auth session
+     */
+    public AuthorizationSession getAuthSession() {
+        AuthorizationSession session = null;
+        if (SecurityContextHolder.getContext().getAuthentication() != null) {
+            session = (AuthorizationSession) SecurityContextHolder.getContext().getAuthentication().getDetails();
+        }
+
+        return session;
+    }
+
+    /**
+     * Gets the logon product id.
+     *
+     * @return the logon product id
+     */
+    public Integer getLogonProductId() {
+        Integer productId = null;
+        AuthorizationSession authSession = getAuthSession();
+
+        if (null != authSession.getUserData()) {
+            productId = authSession.getUserData().getActiveProfile().getProductId();
+        }
+        return productId;
+    }
+
+    /**
+     * Gets the logon company id.
+     *
+     * @return the logon company id
+     */
+    public Integer getLogonCompanyId() {
+        Integer companyId = null;
+        AuthorizationSession authSession = getAuthSession();
+        Integer userId = getLogonUserId();
+        Integer authenticatedUserId = null;
+
+        // First check the authenticated entity, if not available or -1 check the controlled user data
+        if (null != authSession.getAuthenticatedEntityData() && userId != null && userId != -1) {
+            companyId = authSession.getAuthenticatedEntityData().getActiveProfile().getCompanyId();
+            authenticatedUserId = authSession.getAuthenticatedEntityData().getActiveProfile().getUserId();
+        }
+
+        // added condition (null != authenticatedUserId && -1 == authenticatedUserId && null != companyId && 0 == companyId) to support service token emulating
+        // user token
+        if (((null != authenticatedUserId && -1 == authenticatedUserId && null != companyId && 0 == companyId) || (null == companyId || -1 == companyId))
+                && null != authSession.getUserData()) {
+            companyId = authSession.getUserData().getActiveProfile().getCompanyId();
+        }
+        return companyId;
+    }
+
+    /**
+     * Gets the logon user id.
+     *
+     * @return the logon user id
+     */
+    public Integer getLogonUserId() {
+        Integer userId = null;
+        AuthorizationSession authSession = getAuthSession();
+
+        // First check the authenticated entity, if not available or -1 check the controlled user data
+        if (null != authSession.getAuthenticatedEntityData()) {
+            userId = authSession.getAuthenticatedEntityData().getActiveProfile().getUserId();
+        }
+
+        if ((null == userId || -1 == userId) && null != authSession.getUserData()) {
+            userId = authSession.getUserData().getActiveProfile().getUserId();
+        }
+        return userId;
+    }
+
+
+    /**
+     * Gets role of the logged in user.
+     *
+     * @return List of roles of logged in user.
+     */
+    public List<String> getLogonUserRoles() {
+        List<String> roles = null;
+        String role = null;
+
+        AuthorizationSession authSession = getAuthSession();
+
+        // First check the authenticated entity, if not available or -1 check the controlled user data
+        if (null != authSession.getAuthenticatedEntityData()) {
+            role = authSession.getAuthenticatedEntityData().getActiveProfile().getRole();
+        }
+
+        if (CollectionUtils.isEmpty(roles) && null != authSession.getUserData()) {
+            role = authSession.getUserData().getActiveProfile().getRole();
+        }
+        if(role != null) {
+            roles = Arrays.asList(role);
+        }
+
+        return roles;
+    }
+
+    /**
+     * Gets the scopes.
+     *
+     * @return the scopes
+     */
+    public List<String> getScopes() {
+        List<String> scopes = null;
+        AuthorizationSession authSession = getAuthSession();
+        if (authSession.getUserData() != null) {
+            scopes = authSession.getUserData().getScopes();
+        }
+        return scopes;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public PlatformEnum getPlatform() {
+        PlatformEnum platformEnum = PlatformEnum.EU;
+        final AuthorizationSession authSession = getAuthSession();
+        final UserData userData = authSession.getUserData();
+        if(userData != null) {
+            int productId = userData.getProductId();
+            if (productId == NA_PRODUCT_IDS[0] || productId == NA_PRODUCT_IDS[1]) {
+                platformEnum = PlatformEnum.NA;
+            }
+        }
+        return platformEnum;
+    }
+
+}

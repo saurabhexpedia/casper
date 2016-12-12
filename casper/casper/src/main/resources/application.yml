@@ -17,8 +17,7 @@ uitk:
   naweb:
     header:
       url: https://wwwegenciacom.int-maui.sb.karmalab.net
-#  noHeader=true
-#  runmode=local
+  runmode: local
 
 # Config Service      
 configservice:
@@ -27,6 +26,10 @@ configservice:
 #UserService Base URI for UITK's GlobalContext
 userservice:
   baseUri: http://wwwegenciacom.int-maui.sb.karmalab.net/user-service
+  
+flights:
+  baseUri: https://wwwegenciacom.int-maui.sb.karmalab.net/flight-service
+  searchIdUrl: v1/searches
 
 server:
   port: 8080

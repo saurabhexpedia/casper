@@ -1,0 +1,5 @@
+package com.egencia.webapp.users.common.utils;
+
+public class PlatformEU {
+
+}
